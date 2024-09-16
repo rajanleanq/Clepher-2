@@ -11,37 +11,41 @@ interface TabProps {
   link: string;
   icon: string;
 }
-export default function CaptureTools() {
+export default function CaptureTools({
+  handleTab,
+}: {
+  handleTab: (link: string) => void;
+}) {
   const location = useLocation();
   const tabs_constant: Array<TabProps> = [
     {
       title: "Links Library",
-      link: "/759/capture-tools/links-library",
+      link: "links-library",
       icon: LibrarySvg,
     },
     {
       title: "JSON Generator",
-      link: "/759/capture-tools/json-generator",
+      link: "json-generator",
       icon: JsonGeneratorSvg,
     },
     {
       title: "Checkbox Plugin",
-      link: "/759/capture-tools/checkbox-plugin",
+      link: "checkbox-plugin",
       icon: CheckboxPluginSvg,
     },
     {
       title: "Messenger Code",
-      link: "/759/capture-tools/messenger-code",
+      link: "messenger-code",
       icon: MessengerCodeSvg,
     },
     {
       title: "Post Engagement",
-      link: "/759/capture-tools/post-engagement",
+      link: "post-engagement",
       icon: PostEngagementSvg,
     },
     {
       title: "Send To Messenger",
-      link: "/759/capture-tools/send-to-messenger",
+      link: "send-to-messenger",
       icon: SendToMessengerSvg,
     },
   ];
@@ -58,14 +62,19 @@ export default function CaptureTools() {
           return (
             <li key={tab.title} role="menuitem">
               <Link
-                to={tab.link}
+                to={"/759/capture-tools/" + tab.link}
                 aria-current="page"
-                className={location.pathname === tab.link ? "active" : ""}
+                onClick={() => handleTab(tab.link)}
+                className={
+                  location.pathname?.includes(tab.link) ? "active" : ""
+                }
               >
                 <img
                   src={tab.icon || ""}
                   alt={tab?.title}
-                  className={location.pathname === tab.link ? "svg-active" : ""}
+                  className={
+                    location.pathname?.includes(tab.link) ? "svg-active" : ""
+                  }
                 />
                 {tab.title}
               </Link>
