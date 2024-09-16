@@ -29,7 +29,7 @@ export default function Pagination({
         <Button
           className={"text-13 rounded-full bg-blue-400 p-1 text-white"}
           onClick={() => handlePageChange(current_page - 1)}
-          disabled={current_page === 1}
+          disabled={current_page <= 1}
         >
           <ChevronLeft />
         </Button>
@@ -38,7 +38,7 @@ export default function Pagination({
         <Button
           className={"text-13 rounded-full bg-blue-400 p-1 text-white"}
           onClick={() => handlePageChange(current_page + 1)}
-          disabled={current_page === total_pages}
+          disabled={current_page === total_pages || total_pages < 1}
         >
           <ChevronRight />
         </Button>
@@ -46,7 +46,7 @@ export default function Pagination({
         <Button
           className={"text-13 rounded-full bg-blue-400 p-1 text-white"}
           onClick={() => handlePageChange(total_pages)}
-          disabled={current_page === total_pages}
+          disabled={current_page === total_pages || total_pages < 1}
         >
           <ChevronsRight />
         </Button>

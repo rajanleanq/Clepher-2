@@ -1,8 +1,16 @@
-import React from "react";
+import { ChangeEvent } from "react";
 import SearchSvg from "../../../../assets/svg/search.svg";
 import DownArrowSvg from "../../../../assets/svg/down-arrow.svg";
 //post engagement table head
-export default function PeTableHead() {
+export default function PeTableHead({
+  searchValue,
+  handleSearch,
+  handleBulkDelete,
+}: {
+  searchValue: string;
+  handleSearch: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleBulkDelete: () => void;
+}) {
   return (
     <div className="mb-2 flex flex-row items-end gap-2 w-full">
       <div className="grow truncate">
@@ -11,6 +19,8 @@ export default function PeTableHead() {
       <div className="form-control hidden md:flex">
         <div className="join items-center border border-neutral bg-base-100">
           <input
+            onChange={handleSearch}
+            value={searchValue}
             placeholder="Search…"
             type="text"
             className="input input-sm h-[30px] focus:outline-none join-item border-0"
@@ -30,7 +40,7 @@ export default function PeTableHead() {
           className="dropdown-content menu p-2 shadow bg-base-100 rounded-box menu-sm z-[1] mt-1 w-48"
           role="menu"
         >
-          <li role="menuitem">
+          <li role="menuitem" className="w-full">
             <a>Delete</a>
           </li>
         </ul>
