@@ -9,7 +9,7 @@ export default function AppRoutes() {
       <Routes>
         {/* Default route for post-engagement */}
         <Route
-          path="/:id/capture-tools/post-engagement"
+          path="/:id/capture-tools/:captureTool"
           element={<PostEngagement />}
         />
 
