@@ -47,7 +47,7 @@ export default function SettingTabs() {
           </p>
         ))}
       </div>
-      <div className="relative h-[72vh] overflow-y-auto ">
+      <div className="relative h-[72vh] overflow-y-auto  overflow-x-hidden">
         <div
           className={cn(
             "absolute z-10 w-full transition-transform duration-500 p-6",
