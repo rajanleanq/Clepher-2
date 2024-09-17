@@ -19,13 +19,13 @@ export default function PostMenuTabs() {
     <div className="w-full">
       <div
         role="tablist"
-        className="tabs tabs-boxed child:!border-b child:!text-sm  tabs-lg rounded-none"
+        className="tabs tabs-boxed bg-white border child:!border-b child:!text-sm  tabs-lg rounded-none"
       >
         {tabs?.map((tab) => (
           <a
             role="tab"
             className={cn(
-              "tab text-16 capitalize ",
+              "tab text-16 capitalize bg-white",
               activeTab === tab.value && "tab-active"
             )}
             key={tab.value}
