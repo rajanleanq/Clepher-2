@@ -22,7 +22,7 @@ export default function PostMenuTabs() {
         className="tabs tabs-boxed bg-white border-b child:!border-b child:!text-sm  tabs-lg rounded-none"
       >
         {tabs?.map((tab) => (
-          <a
+          <p
             role="tab"
             className={cn(
               "tab text-16 capitalize bg-white",
@@ -32,7 +32,7 @@ export default function PostMenuTabs() {
             onClick={() => setActiveTab(tab.value)}
           >
             {tab.title}
-          </a>
+          </p>
         ))}
       </div>
       <div className="p-6 w-full">

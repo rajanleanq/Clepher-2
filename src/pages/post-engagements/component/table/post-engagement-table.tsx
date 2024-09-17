@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import PeTableHead from "./table-head";
 import Pagination from "../../../../components/molecule/pagination/pagination";
 import RenameModal from "./modal/rename-modal/rename-modal";
@@ -232,10 +232,10 @@ export default function PostEngagementTable() {
                           <a href={routes?.edit}>Edit</a>
                         </li>
                         <li role="menuitem" onClick={handleRename}>
-                          <a>Rename</a>
+                          <p>Rename</p>
                         </li>
                         <li role="menuitem" onClick={handleDelete}>
-                          <a>Delete</a>
+                          <p>Delete</p>
                         </li>
                       </ul>
                     </div>
@@ -257,8 +257,12 @@ export default function PostEngagementTable() {
           total_pages={Math.ceil(handleDataChange()?.totalPages / 10)}
         />
       </div>
-      {renameModal && <RenameModal onClose={() => setRenameModal(false)} />}
-      {deleteModal && <DeleteModal onClose={() => setDeleteModal(false)} />}
+      {renameModal && (
+        <RenameModal onClose={() => dispatch(setRenameModal(false))} />
+      )}
+      {deleteModal && (
+        <DeleteModal onClose={() => dispatch(setDeleteModal(false))} />
+      )}
     </div>
   );
 }

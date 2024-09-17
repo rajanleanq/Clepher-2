@@ -34,7 +34,7 @@ export default function SettingTabs() {
         className="tabs child:!border-b child:!text-sm tabs-bordered tabs-lg"
       >
         {tabs.map((tab) => (
-          <a
+          <p
             role="tab"
             className={cn(
               "tab text-14 h-[57px]",
@@ -44,7 +44,7 @@ export default function SettingTabs() {
             onClick={() => handleTabChange(tab.value)}
           >
             {tab.title}
-          </a>
+          </p>
         ))}
       </div>
       <div className="relative h-[72vh] overflow-y-auto ">

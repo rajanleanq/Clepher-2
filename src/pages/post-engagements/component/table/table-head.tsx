@@ -41,7 +41,7 @@ export default function PeTableHead({
           role="dropdown"
         >
           <li role="menuitem" className="w-full" onClick={handleBulkDelete}>
-            <a>Delete</a>
+            <p>Delete</p>
           </li>
         </ul>
       </div>
