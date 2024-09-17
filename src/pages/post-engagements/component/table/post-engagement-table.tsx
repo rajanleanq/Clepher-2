@@ -6,6 +6,7 @@ import DeleteModal from "./modal/delete-modal/delete-modal";
 import InstagramSvg from "../../../../assets/svg/social-icons/instagram.svg";
 import mockData from "../../../../constant/post-engagement.json";
 import { cn } from "../../../../lib/utils";
+import { routes } from "../../../../constant/routes";
 
 interface IPostEngagementProps {
   name: string;
@@ -220,7 +221,7 @@ export default function PostEngagementTable() {
                         role="menu"
                       >
                         <li role="menuitem">
-                          <a>Edit</a>
+                          <a href={routes?.edit}>Edit</a>
                         </li>
                         <li role="menuitem" onClick={handleRename}>
                           <a>Rename</a>

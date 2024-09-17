@@ -13,7 +13,7 @@ const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "text-green-500 font-nunito text-14 ease-in-out duration-100 transition-all px-4 py-2 rounded-lg",
+          " font-nunito text-14 ease-in-out duration-100 transition-all px-4 py-2 rounded-lg",
           className,
           disabled && "bg-gray-300 text-gray-500 cursor-not-allowed"
         )}
