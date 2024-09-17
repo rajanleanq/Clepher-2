@@ -19,7 +19,7 @@ export default function PostMenuTabs() {
     <div className="w-full">
       <div
         role="tablist"
-        className="tabs tabs-boxed bg-white border child:!border-b child:!text-sm  tabs-lg rounded-none"
+        className="tabs tabs-boxed bg-white border-b child:!border-b child:!text-sm  tabs-lg rounded-none"
       >
         {tabs?.map((tab) => (
           <a

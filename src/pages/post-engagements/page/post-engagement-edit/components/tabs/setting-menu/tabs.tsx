@@ -19,13 +19,13 @@ export default function SettingTabs() {
     <div className="w-full">
       <div
         role="tablist"
-        className="tabs child:!border-b child:!text-sm tabs-bordered tabs-lg"
+        className="tabs child:!border-b child:!text-sm tabs-bordered tabs-lg "
       >
         {tabs?.map((tab) => (
           <a
             role="tab"
             className={cn(
-              "tab text-14 h-[56px]",
+              "tab text-14 h-[57px]",
               activeTab === tab.value && "tab-active"
             )}
             key={tab.value}
