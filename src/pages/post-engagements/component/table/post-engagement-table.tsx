@@ -7,66 +7,67 @@ import InstagramSvg from "../../../../assets/svg/social-icons/instagram.svg";
 import mockData from "../../../../constant/post-engagement.json";
 import { cn } from "../../../../lib/utils";
 import { routes } from "../../../../constant/routes";
-
-interface IPostEngagementProps {
-  name: string;
-  "total_engaged/unique": string;
-  acquired_subscribers: string;
-  conversion_rate: string;
-}
+import { RootState } from "../../../../redux/store";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  IPostEngagementProps,
+  setDeleteModal,
+  setRenameModal,
+  setSearchTerm,
+  setSelectAll,
+  setSelectedRows,
+  setSortColumn,
+  setSortDirection,
+} from "../../../../redux/features/postEngagementSlice";
 
 export default function PostEngagementTable() {
-  const selectAllRef = useRef<HTMLInputElement>(null);
-  const [searchTerm, setSearchTerm] = useState<string>("");
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const [deleteModal, setDeleteModal] = useState<boolean>(false);
-  const [renameModal, setRenameModal] = useState<boolean>(false);
-  const [selectedRows, setSelectedRows] = useState<Array<string>>([]);
-  const [selectAll, setSelectAll] = useState<boolean>(false);
-  const [sortColumn, setSortColumn] = useState<
-    keyof IPostEngagementProps | null
-  >(null);
-  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
+  const dispatch = useDispatch();
+  const {
+    searchTerm,
+    currentPage,
+    selectedRows,
+    selectAll,
+    sortColumn,
+    sortDirection,
+    renameModal,
+    deleteModal,
+  } = useSelector((state: RootState) => state.postEngagement);
 
+  const selectAllRef = useRef<HTMLInputElement>(null);
   const handleRename = () => {
-    setRenameModal(!renameModal);
+    dispatch(setRenameModal(!renameModal));
   };
 
   const handleDelete = () => {
-    setDeleteModal(!deleteModal);
-  };
-
-  const handleBulkDelete = () => {
-    setDeleteModal(!deleteModal);
+    dispatch(setDeleteModal(!deleteModal));
   };
 
   const handleSelectRow = (name: string) => {
     if (selectedRows.includes(name)) {
-      setSelectedRows(selectedRows.filter((row) => row !== name));
+      let filtered_data = selectedRows.filter((row) => row !== name);
+      dispatch(setSelectedRows(filtered_data));
     } else {
-      setSelectedRows([...selectedRows, name]);
+      dispatch(setSelectedRows([...selectedRows, name]));
     }
   };
 
   const handleSelectAllRows = () => {
     const data = handleDataChange().data;
-    console.log(data);
     if (selectAll) {
-      setSelectedRows([]);
+      dispatch(setSelectedRows([]));
     } else {
-      setSelectedRows(data?.map((item) => item.name));
+      dispatch(setSelectedRows(data?.map((item) => item.name)));
     }
-    setSelectAll(!selectAll);
+    dispatch(setSelectAll(!selectAll));
   };
 
   const handleSort = (column: string) => {
     if (sortColumn === column) {
-      // If the same column is clicked, toggle the sort direction
-      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
+      let newSortDirection = sortDirection === "asc" ? "desc" : "asc";
+      dispatch(setSortDirection(newSortDirection as "asc" | "desc"));
     } else {
-      // Set the new column and reset the sort direction to ascending
-      setSortColumn(column as keyof IPostEngagementProps);
-      setSortDirection("asc");
+      dispatch(setSortColumn(column as keyof IPostEngagementProps));
+      dispatch(setSortDirection("asc"));
     }
   };
 
@@ -125,11 +126,15 @@ export default function PostEngagementTable() {
     }
   }, [selectedRows, handleDataChange]);
 
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setSearchTerm(e.target.value));
+  };
+
   return (
     <div className="w-full flex flex-col gap-4 lg:col-span-7">
       <PeTableHead
-        handleBulkDelete={handleBulkDelete}
-        handleSearch={(e) => setSearchTerm(e.target.value)}
+        handleBulkDelete={handleDelete}
+        handleSearch={handleSearch}
         searchValue={searchTerm}
       />
       <div className="overflow-x-auto overflow-y-hidden bg-white rounded-2xl">
@@ -148,12 +153,15 @@ export default function PostEngagementTable() {
                 </label>
               </th>
               <th className="w-5"></th>
-              <th className="w-[150px]" onClick={() => handleSort("name")}>
+              <th
+                className="w-[150px] cursor-pointer"
+                onClick={() => handleSort("name")}
+              >
                 Name{" "}
                 {sortColumn === "name" && (sortDirection === "asc" ? "↑" : "↓")}
               </th>
               <th
-                className="w-[150px]"
+                className="w-[150px] cursor-pointer"
                 onClick={() => handleSort("total_engaged/unique")}
               >
                 Total Engaged/Unique{" "}
@@ -161,7 +169,7 @@ export default function PostEngagementTable() {
                   (sortDirection === "asc" ? "↑" : "↓")}
               </th>
               <th
-                className="w-[150px]"
+                className="w-[150px] cursor-pointer"
                 onClick={() => handleSort("acquired_subscribers")}
               >
                 Acquired Subscribers{" "}
@@ -169,7 +177,7 @@ export default function PostEngagementTable() {
                   (sortDirection === "asc" ? "↑" : "↓")}
               </th>
               <th
-                className="w-[150px]"
+                className="w-[150px] cursor-pointer"
                 onClick={() => handleSort("conversion_rate")}
               >
                 Conversion Rate{" "}
@@ -246,8 +254,6 @@ export default function PostEngagementTable() {
       </div>
       <div className="mx-auto">
         <Pagination
-          current_page={currentPage}
-          handlePageChange={(payload) => setCurrentPage(payload)}
           total_pages={Math.ceil(handleDataChange()?.totalPages / 10)}
         />
       </div>
