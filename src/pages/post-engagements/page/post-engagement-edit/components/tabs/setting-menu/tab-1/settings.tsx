@@ -35,14 +35,14 @@ export default function PostEngagementSettings() {
               key={message.value}
               className="flex flex-row items-center justify-between cursor-pointer"
             >
-              <span className="text-gray-500 text-14">{message.title}</span>
+              <span className="text-gray-500 xs:text-13 md:text-14">{message.title}</span>
               <input type="checkbox" className="toggle toggle-primary" />
             </label>
           ))}
         </div>
         <div className="w-full">
           <div className="flex flex-row items-center gap-1">
-            <h1 className="text-14 font-semibold text-gray-900 mb-1">
+            <h1 className="xs:text-[12px] md:text-14 font-semibold text-gray-900 mb-1">
               Require a Post Reaction
             </h1>
             <InfoIcon value={tooltip_constant.post_reaction} />
@@ -50,18 +50,18 @@ export default function PostEngagementSettings() {
           <hr />
           <PostReaction />
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col xs:gap-1 md:gap-3">
           <div className="flex flex-row items-center gap-1">
-            <h1 className="text-14 font-semibold text-gray-900 mb-1">
+            <h1 className="xs:text-[13px] md:text-14 font-semibold text-gray-900 mb-1">
               Exclude Comments With These Keywords
             </h1>
             <InfoIcon value={tooltip_constant.exclude_comment} />
           </div>
           <AddItem handleChange={() => {}} />
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col xs:gap-1 md:gap-3">
           <div className="flex flex-row items-center gap-1">
-            <h1 className="text-14 font-semibold text-gray-900 mb-1">
+            <h1 className="xs:text-[13px] md:text-14 font-semibold text-gray-900 mb-1">
               Only Trigger For Comments With These Keywords
             </h1>
             <InfoIcon value={tooltip_constant.only_trigger} />
@@ -71,18 +71,18 @@ export default function PostEngagementSettings() {
         </div>
         <div className="w-full">
           <div className="flex flex-row items-center gap-1">
-            <h1 className="text-14 font-semibold text-gray-900 mb-1">
+            <h1 className="xs:text-[13px] md:text-14 font-semibold text-gray-900 mb-1">
               Private Reply After Post Engagement
             </h1>
             <InfoIcon value={tooltip_constant.private_reply_post} />
           </div>
-          <h1 className="text-14 font-semibold text-gray-900 mb-1"></h1>
+          <h1 className="xs:text-[13px] md:text-14 font-semibold text-gray-900 mb-1"></h1>
           <hr />
           <PrivateReply />
         </div>
         <div className="w-full">
           <div className="flex flex-row items-center gap-1">
-            <h1 className="text-14 font-semibold text-gray-900 mb-1">
+            <h1 className="xs:text-[13px] md:text-14 font-semibold text-gray-900 mb-1">
               Send Private Reply Right After
             </h1>
             <InfoIcon value={tooltip_constant.private_reply_post} />

@@ -10,9 +10,9 @@ export default function PostIDUrl() {
     <form onSubmit={handleFormEvent} className="join w-full">
       <input
         placeholder="Specify Post ID / URL"
-        className="input join-item w-full input-bordered focus:outline-offset-0"
+        className="input join-item w-full input-bordered focus:outline-offset-0 xs:text-[12px] md:text-14 "
       />
-      <Button className="btn join-item btn-primary">Grab Post</Button>
+      <Button className="btn join-item btn-primary xs:text-[12px] md:text-[14px] ">Grab Post</Button>
     </form>
   );
 }

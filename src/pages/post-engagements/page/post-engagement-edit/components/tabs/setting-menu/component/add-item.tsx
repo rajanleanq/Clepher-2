@@ -37,11 +37,11 @@ export default function AddItem(props: IAddList) {
       >
         <input
           placeholder="Specify Keywords"
-          className="input join-item w-full input-bordered focus:outline-offset-0"
+          className="input join-item w-full input-bordered focus:outline-offset-0 xs:text-[13px] md:text-14"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
-        <Button className="btn join-item btn-primary">Add Keyword</Button>
+        <Button className="btn join-item btn-primary xs:text-[12px] md:text-[14px]">Add Keyword</Button>
       </form>
     </div>
   );

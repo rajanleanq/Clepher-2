@@ -72,7 +72,7 @@ export default function PostReaction() {
             <img
               src={reaction.icon}
               alt="like"
-              className="w-10 h-10 hover:scale-125 ease-in-out duration-150 transition-all"
+              className="xs:w-6 xs:h-6 lg:w-10 lg:h-10 hover:scale-125 ease-in-out duration-150 transition-all"
             />
           </div>
         ))}
