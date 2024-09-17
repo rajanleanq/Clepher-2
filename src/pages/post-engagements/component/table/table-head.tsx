@@ -1,16 +1,22 @@
 import { ChangeEvent } from "react";
 import SearchSvg from "../../../../assets/svg/search.svg";
 import DownArrowSvg from "../../../../assets/svg/down-arrow.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../../../redux/store";
+import {
+  setDeleteModal,
+  setSearchTerm,
+} from "../../../../redux/features/postEngagementSlice";
 //post engagement table head
-export default function PeTableHead({
-  searchValue,
-  handleSearch,
-  handleBulkDelete,
-}: {
-  searchValue: string;
-  handleSearch: (e: ChangeEvent<HTMLInputElement>) => void;
-  handleBulkDelete: () => void;
-}) {
+export default function PeTableHead() {
+  const dispatch = useDispatch();
+  const { searchTerm } = useSelector(
+    (state: RootState) => state.postEngagement
+  );
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setSearchTerm(e.target.value));
+  };
   return (
     <div className="mb-2 flex flex-row items-end gap-2 w-full">
       <div className="grow truncate">
@@ -20,7 +26,7 @@ export default function PeTableHead({
         <div className="join items-center border border-neutral bg-base-100">
           <input
             onChange={handleSearch}
-            value={searchValue}
+            value={searchTerm}
             placeholder="Search…"
             type="text"
             className="input input-sm h-[30px] focus:outline-none join-item border-0"
@@ -31,17 +37,15 @@ export default function PeTableHead({
         </div>
       </div>
       <div role="listbox" className="dropdown dropdown-end">
-        <label>
-          <button className="btn btn-sm btn-outline">
-            Bulk Actions <img src={DownArrowSvg} alt="down-arrow" />
-          </button>
-        </label>
+        <button className="btn btn-sm btn-outline">
+          Bulk Actions <img src={DownArrowSvg} alt="down-arrow" />
+        </button>
         <ul
-          className="dropdown-content menu p-2 shadow bg-base-100 rounded-box menu-sm z-[1] mt-1 w-48"
-          role="dropdown"
+          tabIndex={0}
+          className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
         >
-          <li role="menuitem" className="w-full" onClick={handleBulkDelete}>
-            <p>Delete</p>
+          <li onClick={() => dispatch(setDeleteModal(true))}>
+            <a>Delete</a>
           </li>
         </ul>
       </div>

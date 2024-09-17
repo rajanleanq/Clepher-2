@@ -126,17 +126,11 @@ export default function PostEngagementTable() {
     }
   }, [selectedRows, handleDataChange]);
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setSearchTerm(e.target.value));
-  };
+  
 
   return (
     <div className="w-full flex flex-col gap-4 lg:col-span-7">
-      <PeTableHead
-        handleBulkDelete={handleDelete}
-        handleSearch={handleSearch}
-        searchValue={searchTerm}
-      />
+      <PeTableHead />
       <div className="overflow-x-auto overflow-y-hidden bg-white rounded-2xl">
         <table className="table">
           <thead>
