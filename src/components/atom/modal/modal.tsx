@@ -5,7 +5,7 @@ import { Button } from '../button/button';
 export default function Modal({ children, onClose }: { children: React.ReactNode; onClose?: () => void }) {
   return (
     <div
-      className="fixed inset-0 z-10 flex items-center justify-center"
+      className="fixed inset-0 z-20 flex items-center justify-center"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"

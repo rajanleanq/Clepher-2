@@ -5,7 +5,7 @@ import PostEngagementAutoResponse from "./tab-2/auto-response";
 
 export default function SettingTabs() {
   const [activeTab, setActiveTab] = useState<number>(1);
-  const [direction, setDirection] = useState<string>("");
+  const [direction, setDirection] = useState<string>("slide-right");
 
   const tabs = [
     {
@@ -47,10 +47,10 @@ export default function SettingTabs() {
           </a>
         ))}
       </div>
-      <div className="relative h-[72vh] overflow-y-auto overflow-x-hidden">
+      <div className="relative h-[72vh] overflow-y-auto ">
         <div
           className={cn(
-            "absolute w-full transition-transform duration-500 p-6",
+            "absolute z-10 w-full transition-transform duration-500 p-6",
             direction === "slide-right" ? "translate-x-0" : "-translate-x-full"
           )}
         >
