@@ -38,9 +38,9 @@ export default function PeTableHead({
         </label>
         <ul
           className="dropdown-content menu p-2 shadow bg-base-100 rounded-box menu-sm z-[1] mt-1 w-48"
-          role="menu"
+          role="dropdown"
         >
-          <li role="menuitem" className="w-full">
+          <li role="menuitem" className="w-full" onClick={handleBulkDelete}>
             <a>Delete</a>
           </li>
         </ul>
