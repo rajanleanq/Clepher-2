@@ -1,5 +1,3 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
-
 const config = {
   darkMode: ["class"],
   content: [
@@ -133,10 +131,7 @@ const config = {
         600: "600",
         700: "700",
       },
-      fontFamily: {
-        nunito: "Nunito",
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-      },
+
       keyframes: {
         "caret-blink": {
           "0%,70%,100%": { opacity: "1" },
@@ -150,9 +145,9 @@ const config = {
       },
     },
   },
-  plugins: [require('daisyui')],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
-    themes: ["light"]
-  }
+    themes: ["light"],
+  },
 };
 export default config;
