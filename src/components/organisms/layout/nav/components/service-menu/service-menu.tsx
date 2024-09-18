@@ -3,6 +3,7 @@ import serviceSvg from "../../../../../../assets/svg/navbar/service.svg";
 import statusSvg from "../../../../../../assets/svg/navbar/status.svg";
 import communitySvg from "../../../../../../assets/svg/navbar/community.svg";
 import knowledgeSvg from "../../../../../../assets/svg/navbar/knowledge-base.svg";
+import { Link } from "react-router-dom";
 interface IMenuProps {
   title: string;
   icon: React.ReactNode;
@@ -43,11 +44,11 @@ export default function ServiceMenu() {
         {service_menu.map((item, index) => {
           return (
             <li key={index} role="menuitem">
-              <a href={item.link} target="_blank" rel="noreferrer">
+              <Link to={item.link} target="_blank" rel="noreferrer">
                 {item.icon}
 
                 {item.title}
-              </a>
+              </Link>
             </li>
           );
         })}

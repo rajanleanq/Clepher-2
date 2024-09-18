@@ -4,12 +4,11 @@ import Sidebar from "./sidebar/sidebar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen min-w-screen">
+    <div aria-expanded="false" className="drawer lg:drawer-open">
+      <input type="checkbox" className="drawer-toggle" readOnly={true} />
       <Navbar />
-      <div className="flex w-full min-h-screen pt-[64px]">
-        <Sidebar />
-        {children}
-      </div>
+      <Sidebar />
+      <div className="drawer-content pt-[69px]">{children}</div>
     </div>
   );
 }

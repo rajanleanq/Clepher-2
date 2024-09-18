@@ -18,6 +18,7 @@ import {
   setSortColumn,
   setSortDirection,
 } from "../../../../redux/features/postEngagementSlice";
+import { Link } from "react-router-dom";
 
 export default function PostEngagementTable() {
   const dispatch = useDispatch();
@@ -222,7 +223,7 @@ export default function PostEngagementTable() {
                         role="menu"
                       >
                         <li role="menuitem">
-                          <a href={routes?.edit}>Edit</a>
+                          <Link to={routes?.edit}>Edit</Link>
                         </li>
                         <li role="menuitem" onClick={handleRename}>
                           <p>Rename</p>
