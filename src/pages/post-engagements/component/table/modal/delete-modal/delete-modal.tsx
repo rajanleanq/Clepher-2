@@ -1,5 +1,4 @@
-import React, { FormEvent } from "react";
-import Modal from "../../../../../../components/atom/modal/modal";
+import Modal from "../../../../../../components/molecule/modal/modal";
 import { Button } from "../../../../../../components/atom/button/button";
 
 export default function DeleteModal({ onClose }: { onClose: () => void }) {

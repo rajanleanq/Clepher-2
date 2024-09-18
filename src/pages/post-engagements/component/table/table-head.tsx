@@ -1,4 +1,3 @@
-import { ChangeEvent } from "react";
 import SearchSvg from "../../../../assets/svg/common/search.svg";
 import DownArrowSvg from "../../../../assets/svg/common/down-arrow.svg";
 import { useDispatch, useSelector } from "react-redux";
@@ -45,7 +44,7 @@ export default function PeTableHead() {
           className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
         >
           <li onClick={() => dispatch(setDeleteModal(true))}>
-            <a>Delete</a>
+            <p>Delete</p>
           </li>
         </ul>
       </div>

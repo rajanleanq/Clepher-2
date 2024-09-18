@@ -13,7 +13,6 @@ import {
   IPostEngagementProps,
   setDeleteModal,
   setRenameModal,
-  setSearchTerm,
   setSelectAll,
   setSelectedRows,
   setSortColumn,

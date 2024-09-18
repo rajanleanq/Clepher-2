@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { widgetConstant } from "./constant/widget.constant";
 
 export default function SelectAPost() {

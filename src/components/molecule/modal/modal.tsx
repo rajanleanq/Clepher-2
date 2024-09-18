@@ -1,6 +1,6 @@
 import { X } from 'lucide-react';
 import React from 'react';
-import { Button } from '../button/button';
+import { Button } from '../../atom/button/button';
 
 export default function Modal({ children, onClose }: { children: React.ReactNode; onClose?: () => void }) {
   return (
