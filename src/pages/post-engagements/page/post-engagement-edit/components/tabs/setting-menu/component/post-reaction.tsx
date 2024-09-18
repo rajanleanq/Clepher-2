@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import LikeSvg from "../../../../../../../../assets/svg/reaction/like.svg";
-import HeartSvg from "../../../../../../../../assets/svg/reaction/heart.svg";
-import HahaSvg from "../../../../../../../../assets/svg/reaction/haha.svg";
-import WowSvg from "../../../../../../../../assets/svg/reaction/wow.svg";
-import SadSvg from "../../../../../../../../assets/svg/reaction/sad.svg";
-import AngrySvg from "../../../../../../../../assets/svg/reaction/angry.svg";
+import LikeSvg from "../../../../../../../../assets/svg/reaction-icons/like.svg";
+import HeartSvg from "../../../../../../../../assets/svg/reaction-icons/heart.svg";
+import HahaSvg from "../../../../../../../../assets/svg/reaction-icons/haha.svg";
+import WowSvg from "../../../../../../../../assets/svg/reaction-icons/wow.svg";
+import SadSvg from "../../../../../../../../assets/svg/reaction-icons/sad.svg";
+import AngrySvg from "../../../../../../../../assets/svg/reaction-icons/angry.svg";
 import Badge from "../../../../../../../../components/atom/badge/badge";
 interface IReaction {
   reaction: Array<{ title: string; icon: string }>;

@@ -1,7 +1,7 @@
 import PostReaction from "../component/post-reaction";
 import PrivateReply from "../component/private-reply";
 import AddItem from "../component/add-item";
-import InfoSvg from "../../../../../../../../assets/svg/info.svg";
+import InfoSvg from "../../../../../../../../assets/svg/common/info.svg";
 
 export default function PostEngagementSettings() {
   const messages: Array<{ title: string; value: number }> = [

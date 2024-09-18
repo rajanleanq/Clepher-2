@@ -1,10 +1,10 @@
 // tabs for capturing tools
-import LibrarySvg from "../../../../assets/svg/library.svg";
-import JsonGeneratorSvg from "../../../../assets/svg/json-generator.svg";
-import CheckboxPluginSvg from "../../../../assets/svg/checkbox-plugin.svg";
-import MessengerCodeSvg from "../../../../assets/svg/messenger-code.svg";
-import PostEngagementSvg from "../../../../assets/svg/post-engagement.svg";
-import SendToMessengerSvg from "../../../../assets/svg/send-to-messenger.svg";
+import LibrarySvg from "../../../../assets/svg/capture-tools-icon/library.svg";
+import JsonGeneratorSvg from "../../../../assets/svg/capture-tools-icon/json-generator.svg";
+import CheckboxPluginSvg from "../../../../assets/svg/capture-tools-icon/checkbox-plugin.svg";
+import MessengerCodeSvg from "../../../../assets/svg/capture-tools-icon/messenger-code.svg";
+import PostEngagementSvg from "../../../../assets/svg/capture-tools-icon/post-engagement.svg";
+import SendToMessengerSvg from "../../../../assets/svg/capture-tools-icon/send-to-messenger.svg";
 import { Link, useLocation } from "react-router-dom";
 interface TabProps {
   title: string;

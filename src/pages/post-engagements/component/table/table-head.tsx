@@ -1,6 +1,6 @@
 import { ChangeEvent } from "react";
-import SearchSvg from "../../../../assets/svg/search.svg";
-import DownArrowSvg from "../../../../assets/svg/down-arrow.svg";
+import SearchSvg from "../../../../assets/svg/common/search.svg";
+import DownArrowSvg from "../../../../assets/svg/common/down-arrow.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../redux/store";
 import {
