@@ -1,6 +1,5 @@
-import React from "react";
-import PostMenuTabs from "./post-tab/tabs";
-import SettingTabs from "./setting-tab/tabs";
+import PostMenuTabs from "./post-tab/post-tab-container";
+import SettingTabs from "./setting-tab/setting-tab-container";
 
 export default function PostEngagementTabs() {
   return (
