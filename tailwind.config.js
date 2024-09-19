@@ -147,8 +147,7 @@ const config = {
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
-    // themes: ["winter", "night"],
-    themes: ["night"],
+    themes: ["winter", "night"],
   },
 };
 export default config;

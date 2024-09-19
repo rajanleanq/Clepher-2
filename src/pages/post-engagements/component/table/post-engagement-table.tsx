@@ -19,7 +19,9 @@ export default function PostEngagementTable() {
     {
       key: "icon",
       width: "20px",
-      render: () => <img src={instagramSvg} alt="instagram" className="w-3.5 h-3.5" />,
+      render: () => (
+        <img src={instagramSvg} alt="instagram" className="w-3.5 h-3.5" />
+      ),
     },
     {
       key: "name",
@@ -47,7 +49,7 @@ export default function PostEngagementTable() {
       width: "150px",
     },
     {
-      key: "action",
+      key: "index",
       title: "Action",
       width: "20px",
       render: () => (
@@ -81,7 +83,12 @@ export default function PostEngagementTable() {
         search_key={"name"}
         handleBulkAction={handleDeleteModal}
         columns={columns}
-        dataSource={mockData}
+        dataSource={mockData?.map((p, index) => {
+          return {
+            ...p,
+            index,
+          };
+        })}
       />
       {renameModal && <RenameModal onClose={() => setRenameModal(false)} />}
       {deleteModal && <DeleteModal onClose={() => setDeleteModal(false)} />}
