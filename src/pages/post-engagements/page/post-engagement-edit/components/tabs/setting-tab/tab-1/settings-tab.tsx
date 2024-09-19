@@ -45,9 +45,7 @@ export default function PostEngagementSettings() {
         <br />
         <div className="w-full">
           <div className="flex flex-row items-center gap-1">
-            <h1 className="xs:text-[12px] md:text-14 font-semibold text-gray-900 mb-1">
-              Require a Post Reaction
-            </h1>
+            <h1 className="sub-header">Require a Post Reaction</h1>
             <InfoTooltip value={tooltip_constant.post_reaction} />
           </div>
           <hr />
@@ -57,18 +55,15 @@ export default function PostEngagementSettings() {
 
         <div className="flex flex-col xs:gap-1 md:gap-3">
           <div className="flex flex-row items-center gap-1">
-            <h1 className="xs:text-[13px] md:text-14 text-gray-900 mb-1">
-              Exclude Comments With These Keywords
-            </h1>
+            <h1 className="sub-header">Exclude Comments With These Keywords</h1>
             <InfoTooltip value={tooltip_constant.exclude_comment} />
           </div>
           <AddKeyword handleChange={() => {}} />
         </div>
         <br />
-
         <div className="flex flex-col xs:gap-1 md:gap-3">
           <div className="flex flex-row items-center gap-1">
-            <h1 className="xs:text-[13px] md:text-14 text-gray-900 mb-1">
+            <h1 className="sub-header">
               Only Trigger For Comments With These Keywords
             </h1>
             <InfoTooltip value={tooltip_constant.only_trigger} />
@@ -79,26 +74,20 @@ export default function PostEngagementSettings() {
         <br />
         <div className="w-full">
           <div className="flex flex-row items-center gap-1">
-            <h1 className="xs:text-[13px] md:text-14 font-semibold text-gray-900 mb-1">
-              Private Reply After Post Engagement
-            </h1>
+            <h1 className="sub-header">Private Reply After Post Engagement</h1>
             <InfoTooltip value={tooltip_constant.private_reply_post} />
           </div>
-          <h1 className="xs:text-[13px] md:text-14 font-semibold text-gray-900 mb-1"></h1>
           <hr />
+
           <PrivateReply />
         </div>
         <br />
         <div className="w-full">
           <div className="flex flex-row items-center gap-1">
-            <h1 className="xs:text-[13px] md:text-14 font-semibold text-gray-900 mb-1">
-              Send Private Reply Right After
-            </h1>
+            <h1 className="sub-header">Send Private Reply Right After</h1>
             <InfoTooltip value={tooltip_constant.private_reply_post} />
           </div>
-
           <hr />
-
           <div className="form-control mt-2">
             <select
               spellCheck="true"

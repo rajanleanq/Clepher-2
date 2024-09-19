@@ -16,15 +16,15 @@ export default function PostEngagementAutoResponse() {
             key={field.value}
             className="flex flex-row items-center justify-between cursor-pointer"
           >
-            <span className="text-gray-500 text-14">{field.title}</span>
+            <span className="opacity-60 xs:text-13 md:text-14">
+              {field.title}
+            </span>
             <input type="checkbox" className="toggle toggle-primary" />
           </label>
         ))}
       </div>
       <div className="w-full">
-        <h1 className="text-14 font-semibold text-gray-900 mb-1">
-          Reply In Comments
-        </h1>
+        <h1 className="sub-header">Reply In Comments</h1>
         <hr />
         <ReplyInComments />
       </div>

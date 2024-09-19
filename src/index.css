@@ -18,7 +18,6 @@
   border-bottom-width: 1px !important;
 }
 
-
 /* For Webkit-based browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
   width: 6px;
@@ -57,16 +56,10 @@ table-sm :where(th, td) {
 
 /* for h1 tags */
 .sub-header {
-  --tw-border-opacity: 1;
-  border-bottom-color: var(
-    --fallback-b3,
-    oklch(var(--b3) / var(--tw-border-opacity))
-  );
-  border-bottom-width: 1px;
   font-weight: 600;
+  font-size: 14px;
   padding-bottom: 0.25rem;
 }
-
 
 /* for svg */
 .fill-current {
