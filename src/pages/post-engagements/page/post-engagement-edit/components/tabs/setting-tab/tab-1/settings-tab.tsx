@@ -1,7 +1,7 @@
 import PostReaction from "../component/post-reaction";
 import PrivateReply from "../component/private-reply";
 import AddKeyword from "../../../../../../../../components/molecule/add-keyword/add-keyword";
-import InfoIcon from "../../../../../../../../assets/svg/common/info.icon";
+import { InfoIcon } from "../../../../../../../../assets/svg/common/common.icon";
 
 export default function PostEngagementSettings() {
   const messages: Array<{ title: string; value: number }> = [

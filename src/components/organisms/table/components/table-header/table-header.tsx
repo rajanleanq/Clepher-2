@@ -1,5 +1,4 @@
-import DownArrowIcon from "../../../../../assets/svg/common/down-arrow.icon";
-import SearchIcon from "../../../../../assets/svg/common/search.icon";
+import { ArrowDownIcon, SearchIcon } from "../../../../../assets/svg/common/common.icon";
 
 export interface ITableHeadProps {
   searchTerm?: string;
@@ -34,7 +33,7 @@ export default function TableHead({
       </div>
       <div role="listbox" className="dropdown dropdown-end">
         <button className="btn btn-sm btn-outline">
-          Bulk Actions <DownArrowIcon />
+          Bulk Actions <ArrowDownIcon />
         </button>
         <ul
           tabIndex={0}

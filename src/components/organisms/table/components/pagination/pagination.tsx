@@ -1,8 +1,10 @@
 import React, { ChangeEvent, useState } from "react";
-import MediaLeftIcon from "../../../../../assets/svg/common/media-left.icon";
-import ArrowRightIcon from "../../../../../assets/svg/common/arrow-right.icon";
-import ArrowLeftIcon from "../../../../../assets/svg/common/arrow-left.icon";
-import MediaRightIcon from "../../../../../assets/svg/common/media-right.icon";
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  MediaLeftIcon,
+  MediaRightIcon,
+} from "../../../../../assets/svg/common/common.icon";
 
 interface IPaginationProps {
   handlePageChange: (page: number) => void;
@@ -61,7 +63,9 @@ export default function Pagination({
       </button>
       <span className="flex items-center gap-1">
         <div>Page</div>
-        <strong>{currentPage} of {totalPages}</strong>
+        <strong>
+          {currentPage} of {totalPages}
+        </strong>
       </span>
       <span className="hidden items-center gap-1 md:flex">
         Go to page:

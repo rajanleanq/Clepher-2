@@ -1,0 +1,9 @@
+export { ReactComponent as AudienceIcon } from "./audience.svg";
+export { ReactComponent as AutomationIcon } from "./automation.svg";
+export { ReactComponent as BroadcastIcon } from "./broadcasts.svg";
+export { ReactComponent as CaptureToolsIcon } from "./capture-tools.svg";
+export { ReactComponent as DashboardIcon } from "./dashboard.svg";
+export { ReactComponent as MarketIcon } from "./market.svg";
+export { ReactComponent as PostEngagementIcon } from "./post-engagement.svg";
+export { ReactComponent as SettingIcon } from "./setting.svg";
+export { ReactComponent as SheetIcon } from "./sheet.svg";

@@ -1,0 +1,12 @@
+export { ReactComponent as BreadCrumbIcon } from "./breadcrumb.svg";
+export { ReactComponent as AccountIcon } from "./account.svg";
+export { ReactComponent as BillingIcon } from "./billing.svg";
+export { ReactComponent as HomeIcon } from "./home.svg";
+export { ReactComponent as LogoutIcon } from "./logout.svg";
+export { ReactComponent as KnowledgeBaseIcon } from "./knowledge-base.svg";
+export { ReactComponent as LightIcon } from "./light.svg";
+export { ReactComponent as DarkIcon } from "./dark.svg";
+export { ReactComponent as ServiceIcon } from "./service.svg";
+export { ReactComponent as StatusIcon } from "./status.svg";
+export { ReactComponent as CommunityIcon } from "./community.svg";
+export { ReactComponent as AlertIcon } from "./alert.svg";

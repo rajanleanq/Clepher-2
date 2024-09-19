@@ -1,11 +1,13 @@
 // tabs for capturing tools
 import { Link, useLocation } from "react-router-dom";
-import LibrarySvg from "../../../../assets/svg/capture-tools-icon/library.icon";
-import JsonGeneratorSvg from "../../../../assets/svg/capture-tools-icon/json-generator.icon";
-import CheckboxPluginIcon from "../../../../assets/svg/capture-tools-icon/checkbox-plugin.icon";
-import MessengerCodeSvg from "../../../../assets/svg/capture-tools-icon/messenger-code.icon";
-import PostEngagmentIcon from "../../../../assets/svg/capture-tools-icon/post-engagement.icon";
-import SentToMessengerIcon from "../../../../assets/svg/capture-tools-icon/send-to-messenger.icon";
+import {
+  CheckboxPluginIcon,
+  JsonGeneratorIcon,
+  LibraryIcon,
+  MessengerCodeIcon,
+  PostEngagementIcon,
+  SendToMessengerIcon,
+} from "../../../../assets/svg/capture-tools-tab-icon/capture-tabs.icon";
 interface TabProps {
   title: string;
   link: string;
@@ -21,12 +23,12 @@ export default function CaptureToolsTabs({
     {
       title: "Links Library",
       link: "links-library",
-      icon: <LibrarySvg />,
+      icon: <LibraryIcon />,
     },
     {
       title: "JSON Generator",
       link: "json-generator",
-      icon: <JsonGeneratorSvg />,
+      icon: <JsonGeneratorIcon />,
     },
     {
       title: "Checkbox Plugin",
@@ -36,17 +38,17 @@ export default function CaptureToolsTabs({
     {
       title: "Messenger Code",
       link: "messenger-code",
-      icon: <MessengerCodeSvg />,
+      icon: <MessengerCodeIcon />,
     },
     {
       title: "Post Engagement",
       link: "post-engagement",
-      icon: <PostEngagmentIcon />,
+      icon: <PostEngagementIcon />,
     },
     {
       title: "Send To Messenger",
       link: "send-to-messenger",
-      icon: <SentToMessengerIcon />,
+      icon: <SendToMessengerIcon />,
     },
   ];
   return (

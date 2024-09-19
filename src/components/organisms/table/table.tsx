@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { cn } from "../../../lib/utils";
 import TableHead, { ITableHeadProps } from "./components/table-header/table-header";
 import Pagination from "./components/pagination/pagination";
-import ArrowDownSolidIcon from "../../../assets/svg/common/arrow-down-solid.icon";
+import { ArrowDownSolidIcon } from "../../../assets/svg/common/common.icon";
 
 export interface ITableProps<T> extends ITableHeadProps {
   columns: TableColumnsType<T>;

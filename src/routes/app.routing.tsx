@@ -4,12 +4,12 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import PostEngagement from "../pages/post-engagements/post-engagement";
-import { routes } from "../constant/routes";
-import Layout from "../components/organisms/layout";
-import NotFound from "../pages/not-found/404";
 import { lazy } from "react";
+import { routes } from "../constant/routes";
+import PostEngagement from "../pages/post-engagements/post-engagement";
+import NotFound from "../pages/not-found/404";
 import withSuspense from "../components/hoc/withSuspense";
+import AdminLayout from "../components/organisms/layout/admin-layout";
 
 // Lazy loading of edit page
 const PostEngagementEdit = lazy(
@@ -27,17 +27,17 @@ export default function AppRoutes() {
         <Route
           path="/:id/capture-tools/:captureTool"
           element={
-            <Layout>
+            <AdminLayout>
               <PostEngagement />
-            </Layout>
+            </AdminLayout>
           }
         />
         <Route
           path="/:id/capture-tools/post-engagement/:captureTool/edit"
           element={
-            <Layout>
+            <AdminLayout>
               <LazyPostEngagementEdit />
-            </Layout>
+            </AdminLayout>
           }
         />
         <Route path="/not-found" element={<NotFound />} />
