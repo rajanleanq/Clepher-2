@@ -6,6 +6,7 @@ import mockData from "../../../../constant/post-engagement.json";
 import instagramSvg from "../../../../assets/svg/social-icons/instagram.svg";
 import { Link } from "react-router-dom";
 import { routes } from "../../../../constant/routes";
+import { cn, isLastItems } from "../../../../lib/utils";
 export default function PostEngagementTable() {
   const [renameModal, setRenameModal] = useState<boolean>(false);
   const [deleteModal, setDeleteModal] = useState<boolean>(false);
@@ -52,8 +53,14 @@ export default function PostEngagementTable() {
       key: "index",
       title: "Action",
       width: "20px",
-      render: () => (
-        <div role="listbox" className={"dropdown dropdown-bottom dropdown-end"}>
+      render: (index: string | number) => (
+        <div
+          role="listbox"
+          className={cn(
+            "dropdown dropdown-bottom dropdown-end",
+            isLastItems(Number(index) + 1, mockData?.length) && 'dropdown-top'
+          )}
+        >
           <label tabIndex={0}>
             <button className="btn btn-xs btn-outline">Actions</button>
           </label>

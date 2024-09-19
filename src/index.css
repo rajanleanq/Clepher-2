@@ -17,6 +17,8 @@
 .tabs-bordered > .tab {
   border-bottom-width: 1px !important;
 }
+
+
 /* For Webkit-based browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
   width: 6px;
@@ -53,6 +55,7 @@ table-sm :where(th, td) {
   padding: 0.5rem 0.75rem !important;
 }
 
+/* for h1 tags */
 .sub-header {
   --tw-border-opacity: 1;
   border-bottom-color: var(
@@ -64,6 +67,8 @@ table-sm :where(th, td) {
   padding-bottom: 0.25rem;
 }
 
+
+/* for svg */
 .fill-current {
   fill: currentColor;
 }

@@ -163,7 +163,7 @@ export default function Table<T extends Record<string, any>>({
               {columns.map((column) => (
                 <th
                   key={String(column.key)}
-                  className={cn(`cursor-pointer`)}
+                  className={cn(column?.dataIndex && `cursor-pointer`)}
                   style={{ width: column?.width }}
                   onClick={() =>
                     column?.dataIndex && handleSort(column.dataIndex)
@@ -199,7 +199,7 @@ export default function Table<T extends Record<string, any>>({
                       style={{ width: column?.width }}
                     >
                       {column?.render
-                        ? column?.render?.(item?.[column?.dataIndex!])
+                        ? column?.render?.(item?.[column?.key])
                         : item?.[column?.dataIndex!]}
                     </td>
                   ))}
