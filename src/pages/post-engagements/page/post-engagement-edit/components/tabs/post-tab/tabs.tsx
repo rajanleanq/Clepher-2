@@ -19,20 +19,18 @@ export default function PostMenuTabs() {
     <div className="w-full">
       <div
         role="tablist"
-        className="tabs tabs-boxed bg-white border-b child:!border-b child:!text-sm  tabs-lg rounded-none"
+        className="tabs h-12 bg-base-100 p-0 rounded-b-none border-b border-b-base-300 tabs-boxed tabs-lg"
       >
-        {tabs?.map((tab) => (
-          <p
-            role="tab"
-            className={cn(
-              "tab text-16 capitalize bg-white",
-              activeTab === tab.value && "tab-active"
-            )}
+        {tabs.map((tab) => (
+          <div
             key={tab.value}
+            role="tab"
+            className={cn("tab", activeTab === tab.value && "tab-active")}
+            style={{ borderRadius: "0px" }}
             onClick={() => setActiveTab(tab.value)}
           >
-            {tab.title}
-          </p>
+            Select A Post
+          </div>
         ))}
       </div>
       <div className="p-6 w-full">

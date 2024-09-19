@@ -49,6 +49,17 @@
   border-radius: 8px;
   background-color: #bdbdbd;
 }
-table-sm :where(th,td) {
-  padding: .5rem .75rem !important;
+table-sm :where(th, td) {
+  padding: 0.5rem 0.75rem !important;
+}
+
+.sub-header {
+  --tw-border-opacity: 1;
+  border-bottom-color: var(
+    --fallback-b3,
+    oklch(var(--b3) / var(--tw-border-opacity))
+  );
+  border-bottom-width: 1px;
+  font-weight: 600;
+  padding-bottom: 0.25rem;
 }

@@ -4,7 +4,10 @@ import { Button } from "../../../../../../../../../components/atom/button/button
 export default function AddComment() {
   const [comments, setComments] = useState<Array<string>>([""]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
     const updatedComments = comments.map((comment, i) =>
       i === index ? e.target.value : comment
     );
@@ -12,7 +15,9 @@ export default function AddComment() {
   };
 
   const handleAddComment = () => {
-    setComments((prev) => [...prev, ""]);
+    if (comments?.length !== 10) {
+      setComments((prev) => [...prev, ""]);
+    }
   };
 
   const handleDeleteComment = (index: number) => {
@@ -43,12 +48,14 @@ export default function AddComment() {
           </div>
         </div>
       ))}
-      <Button
-        onClick={handleAddComment}
-        className="bg-blue-400 text-white font-semibold w-max mx-auto mt-1"
-      >
-        Add Comment
-      </Button>
+      {comments?.length !== 10 && (
+        <Button
+          onClick={handleAddComment}
+          className="bg-blue-400 text-white font-semibold w-max mx-auto mt-1"
+        >
+          Add Comment
+        </Button>
+      )}
     </div>
   );
 }

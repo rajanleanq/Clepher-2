@@ -10,9 +10,11 @@ export default function AddItem(props: IAddList) {
   const [items, setItems] = React.useState<Array<string>>([]);
   const handleFormEvent = (e: FormEvent) => {
     e.preventDefault();
-    setItems([...items, value]);
-    props.handleChange([...items, value]);
-    setValue("");
+    if (value?.trim()?.length !== 0) {
+      setItems([...items, value]);
+      props.handleChange([...items, value]);
+      setValue("");
+    }
   };
   const handleDelete = (payload: string) => {
     let copy_items = [...items];
@@ -31,17 +33,16 @@ export default function AddItem(props: IAddList) {
           ))}
         </div>
       )}
-      <form
-        onSubmit={handleFormEvent}
-        className="join w-full"
-      >
+      <form onSubmit={handleFormEvent} className="join w-full">
         <input
           placeholder="Specify Keywords"
           className="input join-item w-full input-bordered focus:outline-offset-0 xs:text-[13px] md:text-14"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
-        <Button className="btn join-item btn-primary xs:text-[12px] md:text-[14px]">Add Keyword</Button>
+        <Button className="btn join-item btn-primary xs:text-[12px] md:text-[14px]">
+          Add Keyword
+        </Button>
       </form>
     </div>
   );

@@ -28,18 +28,19 @@ export default function PostEngagementSettings() {
   };
   return (
     <>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col">
         <div className="flex flex-col gap-2">
           {messages?.map((message) => (
             <label
               key={message.value}
               className="flex flex-row items-center justify-between cursor-pointer"
             >
-              <span className="text-gray-500 xs:text-13 md:text-14">{message.title}</span>
+              <span className="opacity-60 xs:text-13 md:text-14">{message.title}</span>
               <input type="checkbox" className="toggle toggle-primary" />
             </label>
           ))}
         </div>
+        <br/>
         <div className="w-full">
           <div className="flex flex-row items-center gap-1">
             <h1 className="xs:text-[12px] md:text-14 font-semibold text-gray-900 mb-1">
@@ -50,18 +51,22 @@ export default function PostEngagementSettings() {
           <hr />
           <PostReaction />
         </div>
+        <br/>
+
         <div className="flex flex-col xs:gap-1 md:gap-3">
           <div className="flex flex-row items-center gap-1">
-            <h1 className="xs:text-[13px] md:text-14 font-semibold text-gray-900 mb-1">
+            <h1 className="xs:text-[13px] md:text-14 text-gray-900 mb-1">
               Exclude Comments With These Keywords
             </h1>
             <InfoIcon value={tooltip_constant.exclude_comment} />
           </div>
           <AddItem handleChange={() => {}} />
         </div>
+        <br/>
+
         <div className="flex flex-col xs:gap-1 md:gap-3">
           <div className="flex flex-row items-center gap-1">
-            <h1 className="xs:text-[13px] md:text-14 font-semibold text-gray-900 mb-1">
+            <h1 className="xs:text-[13px] md:text-14 text-gray-900 mb-1">
               Only Trigger For Comments With These Keywords
             </h1>
             <InfoIcon value={tooltip_constant.only_trigger} />
@@ -69,6 +74,7 @@ export default function PostEngagementSettings() {
 
           <AddItem handleChange={() => {}} />
         </div>
+        <br/>
         <div className="w-full">
           <div className="flex flex-row items-center gap-1">
             <h1 className="xs:text-[13px] md:text-14 font-semibold text-gray-900 mb-1">
@@ -80,6 +86,7 @@ export default function PostEngagementSettings() {
           <hr />
           <PrivateReply />
         </div>
+        <br/>
         <div className="w-full">
           <div className="flex flex-row items-center gap-1">
             <h1 className="xs:text-[13px] md:text-14 font-semibold text-gray-900 mb-1">

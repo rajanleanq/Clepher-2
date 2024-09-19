@@ -37,7 +37,7 @@ export default function SettingTabs() {
           <p
             role="tab"
             className={cn(
-              "tab text-14 h-[57px]",
+              "tab text-14",
               activeTab === tab.value && "tab-active"
             )}
             key={tab.value}
@@ -47,10 +47,10 @@ export default function SettingTabs() {
           </p>
         ))}
       </div>
-      <div className="relative h-[72vh] overflow-y-auto  overflow-x-hidden">
+      <div className="relative h-[75vh] overflow-y-auto  overflow-x-hidden">
         <div
           className={cn(
-            "absolute z-10 w-full transition-transform duration-500 p-6",
+            "absolute z-10 w-full transition-transform duration-500 px-6 py-3.5",
             direction === "slide-right" ? "translate-x-0" : "-translate-x-full"
           )}
         >
@@ -58,7 +58,7 @@ export default function SettingTabs() {
         </div>
         <div
           className={cn(
-            "absolute w-full transition-transform duration-500 p-6",
+            "absolute w-full transition-transform duration-500 px-6 py-3.5",
             direction === "slide-left" ? "translate-x-0" : "translate-x-full"
           )}
         >

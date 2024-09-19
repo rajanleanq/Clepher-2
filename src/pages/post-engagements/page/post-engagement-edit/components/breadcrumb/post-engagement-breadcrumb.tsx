@@ -16,19 +16,23 @@ export default function PostEngBreadcrumb() {
   ];
   return (
     <div className="flex items-center justify-between">
-      <div className="breadcrumbs text-sm">
+      <div
+        role="navigation"
+        aria-label="Breadcrumbs"
+        className="breadcrumbs text-lg p-0"
+      >
         <ul>
           {links.map((link, index) => (
-            <li key={index}>
-              <Link to={link.link} className="xs:text-13 lg:text-16 font-semibold">
-                {link.title}
-              </Link>
+            <li role="link" key={index}>
+              <Link to={link.link}>{link.title}</Link>
             </li>
           ))}
-          <li className="xs:text-13 lg:text-16 font-semibold">Edit</li>
+          <li role="link">Edit</li>
         </ul>
       </div>
-      <Button className="bg-blue-400 text-white text-[13px]">Save</Button>
+      <div>
+        <button className="btn btn-sm btn-primary">Save</button>
+      </div>
     </div>
   );
 }
