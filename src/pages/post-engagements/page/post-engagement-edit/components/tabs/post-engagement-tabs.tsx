@@ -4,7 +4,7 @@ import SettingTabs from "./setting-tab/tabs";
 
 export default function PostEngagementTabs() {
   return (
-    <div className="flex w-full flex-1 bg-white rounded-xl xs:flex-col md:flex-col lg:flex-row ">
+    <div className="flex w-full flex-1 bg-base-100  rounded-xl xs:flex-col md:flex-col lg:flex-row ">
       <div className="basis-2/5">
         <SettingTabs />
       </div>
