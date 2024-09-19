@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-//for drop down at table
+//for action drop down at bottom of table 
 export function isLastItems(payload: number, data_length: number) {
   if (
     payload === data_length ||

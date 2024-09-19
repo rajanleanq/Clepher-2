@@ -11,6 +11,7 @@ import NotFound from "../pages/not-found/404";
 import { lazy } from "react";
 import withSuspense from "../components/hoc/withSuspense";
 
+// Lazy loading of edit page
 const PostEngagementEdit = lazy(
   () =>
     import(
@@ -23,7 +24,6 @@ export default function AppRoutes() {
   return (
     <Router>
       <Routes>
-        {/* Default route for post-engagement */}
         <Route
           path="/:id/capture-tools/:captureTool"
           element={
@@ -32,8 +32,6 @@ export default function AppRoutes() {
             </Layout>
           }
         />
-
-        {/* Route for edit mode */}
         <Route
           path="/:id/capture-tools/post-engagement/:captureTool/edit"
           element={
@@ -42,14 +40,8 @@ export default function AppRoutes() {
             </Layout>
           }
         />
-
-        {/* Catch-all route for non-existing routes: NotFound page */}
         <Route path="/not-found" element={<NotFound />} />
-
-        {/* Redirect to 'not-found' for any unknown routes */}
         <Route path="*" element={<Navigate to="/not-found" replace />} />
-
-        {/* Catch-all route (optional): Redirect to the default post-engagement page */}
         <Route path="/" element={<Navigate to={routes?.index} replace />} />
       </Routes>
     </Router>
