@@ -54,7 +54,7 @@ export default function ReactionHandler({
                 data-reaction={reaction?.title}
                 onClick={() => handleReaction(reaction)}
               >
-                <div className="flex flex-col gap-2 hover:scale-[1.16] hover:translate-y-[-8px]  items-center relative cursor-pointer">
+                <div className="flex flex-col gap-2 hover:scale-[1.16] hover:translate-y-[-8px] ease-in-out duration-150 transition-all  items-center relative cursor-pointer">
                   <p className="bg-black-primary bg-opacity-75 text-white text-[10px] text-center w-max px-2 absolute top-[-20px] rounded-[8px] reaction-text">
                     {reaction?.title}
                   </p>

@@ -9,71 +9,59 @@ interface IPaginationProps {
   currentPage: number;
   data_length: number;
 }
+
 export default function Pagination({
   currentPage,
   handlePageChange,
   data_length,
 }: IPaginationProps) {
-  const calculateTotalPages = () => {
-    return Math.ceil(data_length / 10);
-  };
+  const totalPages = Math.ceil(data_length / 10);
   const [page_number, setPageNumber] = useState<number>();
+
   const handlePageNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
-    let value = e.target.value;
-    setPageNumber(Number(value));
-    if (!value) {
-      handlePageChange(1);
-    } else {
-      handlePageChange(Number(value));
-    }
+    const value = Number(e.target.value);
+    setPageNumber(value);
+    handlePageChange(value || 1);
   };
-  const handleDisableArrows = () => {
-    let left_arrows: boolean = false;
-    let right_arrows: boolean = false;
-    if (calculateTotalPages() <= 1 || currentPage === 1) {
-      left_arrows = true;
-    }
-    if (calculateTotalPages() <= 1 || currentPage === calculateTotalPages()) {
-      right_arrows = true;
-    }
-    return {
-      left_arrows,
-      right_arrows,
-    };
-  };
+
+  const disableArrowButtons = () => ({
+    left_arrows: currentPage === 1,
+    right_arrows: currentPage === totalPages || currentPage > totalPages,
+  });
+
   return (
     <div className="flex items-center justify-center gap-4 py-3.5">
       <button
         className="btn btn-circle btn-primary btn-sm"
         onClick={() => handlePageChange(1)}
-        disabled={handleDisableArrows()?.left_arrows}
+        disabled={disableArrowButtons().left_arrows}
       >
-        <MediaLeftIcon/>
+        <MediaLeftIcon />
       </button>
       <button
         className="btn btn-circle btn-primary btn-sm"
         onClick={() => handlePageChange(currentPage - 1)}
-        disabled={handleDisableArrows()?.left_arrows}
+        disabled={disableArrowButtons().left_arrows}
       >
-        <ArrowLeftIcon/>
+        <ArrowLeftIcon />
       </button>
       <button
         className="btn btn-circle btn-primary btn-sm"
         onClick={() => handlePageChange(currentPage + 1)}
-        disabled={handleDisableArrows()?.right_arrows}
+        disabled={disableArrowButtons().right_arrows}
       >
-        <ArrowRightIcon/>
+        <ArrowRightIcon />
       </button>
       <button
         className="btn btn-circle btn-primary btn-sm"
-        onClick={() => handlePageChange(calculateTotalPages())}
-        disabled={handleDisableArrows()?.right_arrows}
+        onClick={() => handlePageChange(totalPages)}
+        disabled={disableArrowButtons().right_arrows}
       >
-        <MediaRightIcon/>
+        <MediaRightIcon />
       </button>
       <span className="flex items-center gap-1">
         <div>Page</div>
-        <strong>1 of {calculateTotalPages()}</strong>
+        <strong>{currentPage} of {totalPages}</strong>
       </span>
       <span className="hidden items-center gap-1 md:flex">
         Go to page:
