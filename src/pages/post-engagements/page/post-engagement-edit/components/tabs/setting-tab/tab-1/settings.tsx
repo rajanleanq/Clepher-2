@@ -1,7 +1,7 @@
 import PostReaction from "../component/post-reaction";
 import PrivateReply from "../component/private-reply";
-import AddItem from "../component/add-item";
 import InfoSvg from "../../../../../../../../assets/svg/common/info.svg";
+import AddKeyword from "../../../../../../../../components/molecule/add-keyword/add-keyword";
 
 export default function PostEngagementSettings() {
   const messages: Array<{ title: string; value: number }> = [
@@ -60,7 +60,7 @@ export default function PostEngagementSettings() {
             </h1>
             <InfoIcon value={tooltip_constant.exclude_comment} />
           </div>
-          <AddItem handleChange={() => {}} />
+          <AddKeyword handleChange={() => {}} />
         </div>
         <br/>
 
@@ -72,7 +72,7 @@ export default function PostEngagementSettings() {
             <InfoIcon value={tooltip_constant.only_trigger} />
           </div>
 
-          <AddItem handleChange={() => {}} />
+          <AddKeyword handleChange={() => {}} />
         </div>
         <br/>
         <div className="w-full">
