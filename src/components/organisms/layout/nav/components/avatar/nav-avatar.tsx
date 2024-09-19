@@ -15,7 +15,7 @@ export default function NavAvatar() {
           </div>
         </div>
       </a>
-      <label className="btn btn-circle btn-ghost lg:hidden">
+      <label htmlFor="my-drawer-1" className="btn btn-circle drawer-button btn-ghost lg:hidden">
         <img src={breadCrumbSvg} alt="breadcrumb" className="w-5 h-5" />
       </label>
     </div>

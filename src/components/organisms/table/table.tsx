@@ -138,7 +138,7 @@ export default function Table<T extends Record<string, any>>({
     setSearchTerm(e.target.value);
   };
   return (
-    <div className="w-full">
+    <div className="">
       <TableHead
         handleSearch={handleSearch}
         handleBulkAction={handleBulkAction}
