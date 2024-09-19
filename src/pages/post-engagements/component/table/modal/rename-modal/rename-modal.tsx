@@ -12,8 +12,13 @@ export default function RenameModal({ onClose }: { onClose: () => void }) {
         <p>Please enter a new name:</p>
         <input className="input input-bordered" placeholder="Enter new name" />
         <div className="flex items-center justify-between">
-          <Button className="border rounded-lg" onClick={onClose}>Cancel</Button>
-          <Button className="bg-blue-400 text-white">Confirm</Button>
+          <Button
+            className="btn btn-error btn-outline btn-sm"
+            onClick={onClose}
+          >
+            Cancel
+          </Button>
+          <Button className="btn btn-primary btn-sm text-white">Confirm</Button>
         </div>
       </form>
     </Modal>
