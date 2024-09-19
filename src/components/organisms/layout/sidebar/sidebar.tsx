@@ -71,7 +71,7 @@ export default function Sidebar() {
   ];
   return (
     <div className="drawer-side">
-      <label className="drawer-overlay"></label>
+      <label htmlFor="my-drawer-1" aria-label="close sidebar" className="drawer-overlay"></label>
       <ul className="menu border-r border-r-base-300 min-h-full bg-base-100 pt-20">
         {sidebar_items.map((item, index) => (
           <li key={index}>

@@ -17,7 +17,7 @@ export default function PostEngagement() {
   };
 
   return (
-    <section className=" bg-[#F2F7FF] min-h-full w-full grid grid-cols-1 gap-6 p-6 lg:grid-cols-9">
+    <section className="  min-h-full w-full grid grid-cols-1 gap-6 p-6 lg:grid-cols-9">
       <CaptureToolsTabs handleTab={handleTab} />
       {handleRender()}
     </section>
