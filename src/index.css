@@ -49,3 +49,6 @@
   border-radius: 8px;
   background-color: #bdbdbd;
 }
+table-sm :where(th,td) {
+  padding: .5rem .75rem !important;
+}

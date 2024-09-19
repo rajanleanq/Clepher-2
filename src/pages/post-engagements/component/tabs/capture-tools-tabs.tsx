@@ -11,7 +11,7 @@ interface TabProps {
   link: string;
   icon: string;
 }
-export default function CaptureTools({
+export default function CaptureToolsTabs({
   handleTab,
 }: {
   handleTab: (link: string) => void;
@@ -50,7 +50,7 @@ export default function CaptureTools({
     },
   ];
   return (
-    <div className="col-span-2 hidden  lg:block">
+    <div className="col-span-2 hidden lg:block pr-6">
       <ul
         role="menu"
         className="menu rounded-box bg-base-100 menu-vertical min-w-max"

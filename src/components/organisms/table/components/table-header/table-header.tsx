@@ -1,28 +1,25 @@
-import SearchSvg from "../../../../assets/svg/common/search.svg";
-import DownArrowSvg from "../../../../assets/svg/common/down-arrow.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../../redux/store";
-import {
-  setDeleteModal,
-  setSearchTerm,
-} from "../../../../redux/features/postEngagementSlice";
-//post engagement table head
-export default function PeTableHead() {
-  const dispatch = useDispatch();
-  const { searchTerm } = useSelector(
-    (state: RootState) => state.postEngagement
-  );
+import SearchSvg from "../../../../../assets/svg/common/search.svg";
+import DownArrowSvg from "../../../../../assets/svg/common/down-arrow.svg";
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setSearchTerm(e.target.value));
-  };
+export interface ITableHeadProps {
+  searchTerm?: string;
+  handleSearch?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleBulkAction: () => void;
+  tableName:string
+}
+export default function TableHead({
+  handleSearch,
+  searchTerm,
+  handleBulkAction,
+  tableName
+}: ITableHeadProps) {
   return (
     <div className="mb-2 flex flex-row items-end gap-2 w-full">
       <div className="grow truncate">
-        <h4 className="truncate text-xl">Post Engagements</h4>
+        <h4 className="truncate text-xl">{tableName}</h4>
       </div>
       <div className="form-control hidden md:flex">
-        <div className="join items-center border border-neutral bg-base-100">
+        <div className="join items-center border border-neutral-900 bg-base-100">
           <input
             onChange={handleSearch}
             value={searchTerm}
@@ -43,7 +40,7 @@ export default function PeTableHead() {
           tabIndex={0}
           className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
         >
-          <li onClick={() => dispatch(setDeleteModal(true))}>
+          <li onClick={handleBulkAction}>
             <p>Delete</p>
           </li>
         </ul>

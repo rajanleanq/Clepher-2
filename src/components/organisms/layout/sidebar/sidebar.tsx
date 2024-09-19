@@ -34,7 +34,7 @@ export default function Sidebar() {
       ),
     },
     {
-      link: "/759/capture-tools/post-engagements",
+      link: "/759/capture-tools/post-engagement",
       icon: (
         <img
           src={captureToolsSvg}

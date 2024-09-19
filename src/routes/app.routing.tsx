@@ -8,7 +8,7 @@ import PostEngagement from "../pages/post-engagements/post-engagement";
 import PostEngagementEdit from "../pages/post-engagements/page/post-engagement-edit/post-engagement-edit";
 import { routes } from "../constant/routes";
 import Layout from "../components/organisms/layout";
-import NotFound from "../pages/post-engagements/page/not-found/404";
+import NotFound from "../pages/not-found/404";
 
 export default function AppRoutes() {
   return (
