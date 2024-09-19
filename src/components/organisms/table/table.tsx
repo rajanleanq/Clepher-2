@@ -81,11 +81,10 @@ export default function Table<T extends Record<string, any>>({
   };
 
   const handleSelectAllRows = () => {
-    const data = handleDataChange()?.data;
     if (selectAll) {
       setSelectedRows([]);
     } else {
-      setSelectedRows(data?.map((item: T) => item[columns[0].key]));
+      setSelectedRows(dataSource?.map((item: T) => item[columns[1].key]));
     }
     setSelectAll(!selectAll);
   };
@@ -189,8 +188,8 @@ export default function Table<T extends Record<string, any>>({
                       <input
                         type="checkbox"
                         className="checkbox checkbox-sm"
-                        checked={selectedRows.includes(item[columns[0].key])}
-                        onChange={() => handleSelectRow(item[columns[0].key])}
+                        checked={selectedRows.includes(item[columns[1].key])}
+                        onChange={() => handleSelectRow(item[columns[1]?.key])}
                       />
                     </label>
                   </td>
