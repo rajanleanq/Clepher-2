@@ -66,7 +66,7 @@ export default function PostEngagementTable() {
             <li role="menuitem" onClick={handleRenameModal}>
               <p>Rename</p>
             </li>
-            <li role="menuitem" onClick={handleRenameModal}>
+            <li role="menuitem" onClick={handleDeleteModal}>
               <p>Delete</p>
             </li>
           </ul>
@@ -79,7 +79,7 @@ export default function PostEngagementTable() {
       <Table
         tableName="Post Engagements"
         search_key={"name"}
-        handleBulkAction={() => setDeleteModal(true)}
+        handleBulkAction={handleDeleteModal}
         columns={columns}
         dataSource={mockData}
       />
