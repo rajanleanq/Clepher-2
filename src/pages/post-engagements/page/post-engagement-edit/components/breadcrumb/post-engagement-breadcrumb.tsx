@@ -1,6 +1,5 @@
-import React from "react";
-import { routes } from "../../../../../../constant/routes";
 import { Button } from "../../../../../../components/atom/button/button";
+import { routes } from "../../../../../../constant/routes";
 import { Link } from "react-router-dom";
 
 export default function PostEngBreadcrumb() {
@@ -31,7 +30,7 @@ export default function PostEngBreadcrumb() {
         </ul>
       </div>
       <div>
-        <button className="btn btn-sm btn-primary">Save</button>
+        <Button className="btn btn-sm btn-primary">Save</Button>
       </div>
     </div>
   );

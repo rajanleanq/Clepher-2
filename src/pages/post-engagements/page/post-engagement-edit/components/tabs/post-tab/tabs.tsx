@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { cn } from "../../../../../../../lib/utils";
-import SelectAPost from "./tab-1/select-a-post";
-import PostIDUrl from "./tab-2/post-id-url";
+import SelectAPost from "./tab-1/select-a-post-tab";
+import PostIDUrl from "./tab-2/post-id-url-tab";
 
 export default function PostMenuTabs() {
   const [activeTab, setActiveTab] = useState<Number>(1);

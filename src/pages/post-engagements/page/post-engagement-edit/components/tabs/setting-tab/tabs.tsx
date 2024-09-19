@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { cn } from "../../../../../../../lib/utils";
-import PostEngagementSettings from "./tab-1/settings";
-import PostEngagementAutoResponse from "./tab-2/auto-response";
+import PostEngagementSettings from "./tab-1/settings-tab";
+import PostEngagementAutoResponse from "./tab-2/auto-response-tab";
 
 export default function SettingTabs() {
   const [activeTab, setActiveTab] = useState<number>(1);
