@@ -14,7 +14,7 @@ export default function PostEngBreadcrumb() {
     },
   ];
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between px-2">
       <div
         role="navigation"
         aria-label="Breadcrumbs"
