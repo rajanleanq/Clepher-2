@@ -5,10 +5,19 @@ import {
   Navigate,
 } from "react-router-dom";
 import PostEngagement from "../pages/post-engagements/post-engagement";
-import PostEngagementEdit from "../pages/post-engagements/page/post-engagement-edit/post-engagement-edit";
 import { routes } from "../constant/routes";
 import Layout from "../components/organisms/layout";
 import NotFound from "../pages/not-found/404";
+import { lazy } from "react";
+import withSuspense from "../components/hoc/withSuspense";
+
+const PostEngagementEdit = lazy(
+  () =>
+    import(
+      "../pages/post-engagements/page/post-engagement-edit/post-engagement-edit"
+    )
+);
+const LazyPostEngagementEdit = withSuspense(PostEngagementEdit);
 
 export default function AppRoutes() {
   return (
@@ -29,7 +38,7 @@ export default function AppRoutes() {
           path="/:id/capture-tools/post-engagement/:captureTool/edit"
           element={
             <Layout>
-              <PostEngagementEdit />
+              <LazyPostEngagementEdit />
             </Layout>
           }
         />
