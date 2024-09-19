@@ -12,7 +12,7 @@ export default function Badge({
   handleClose: () => void
 }) {
   return (
-    <div className={cn("badge bg-blue-50 border-blue-800 text-14 font-medium py-4", className)}>
+    <div className={cn("badge bg-blue-100 border-blue-200 text-14 font-medium px-3 py-[14px]", className)}>
       {children}
       <X className="w-4 cursor-pointer hover:text-yellow-500 ease-in-out duration-100 transition-all" onClick={handleClose} />
     </div>
