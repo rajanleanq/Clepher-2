@@ -1,9 +1,9 @@
 import React from "react";
-import serviceSvg from "../../../../../../assets/svg/navbar/service.svg";
-import statusSvg from "../../../../../../assets/svg/navbar/status.svg";
-import communitySvg from "../../../../../../assets/svg/navbar/community.svg";
-import knowledgeSvg from "../../../../../../assets/svg/navbar/knowledge-base.svg";
 import { Link } from "react-router-dom";
+import StatusIcon from "../../../../../../assets/svg/navbar/status.icon";
+import CommunityIcon from "../../../../../../assets/svg/navbar/community.icon";
+import KnowledgeBaseIcon from "../../../../../../assets/svg/navbar/knowledge-base.icon";
+import ServiceIcon from "../../../../../../assets/svg/navbar/service.icon";
 interface IMenuProps {
   title: string;
   icon: React.ReactNode;
@@ -13,17 +13,17 @@ export default function ServiceMenu() {
   const service_menu: IMenuProps[] = [
     {
       title: "Status",
-      icon: <img src={statusSvg} alt="status" className="w-5 h-5" />,
+      icon: <StatusIcon />,
       link: "https://status.clepher.com/",
     },
     {
       title: "Community",
-      icon: <img src={communitySvg} alt="community" className="w-5 h-5" />,
+      icon: <CommunityIcon />,
       link: "https://www.facebook.com/groups/clepher/",
     },
     {
       title: "Knowledge Base",
-      icon: <img src={knowledgeSvg} alt="knowledge" className="w-5 h-5" />,
+      icon: <KnowledgeBaseIcon />,
       link: "https://clepher.com/support/",
     },
   ];
@@ -34,7 +34,7 @@ export default function ServiceMenu() {
     >
       <label>
         <button className="btn btn-circle btn-ghost">
-          <img src={serviceSvg} alt="service" className="w-5 h-5" />
+          <ServiceIcon />
         </button>
       </label>
       <ul

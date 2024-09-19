@@ -1,8 +1,8 @@
 import React, { ChangeEvent, useState } from "react";
-import arrowLeft from "../../../../../assets/svg/common/arrow-left.svg";
-import arrowRight from "../../../../../assets/svg/common/arrow-right.svg";
-import mediaLeft from "../../../../../assets/svg/common/media-left.svg";
-import mediaRight from "../../../../../assets/svg/common/media-right.svg";
+import MediaLeftIcon from "../../../../../assets/svg/common/media-left.icon";
+import ArrowRightIcon from "../../../../../assets/svg/common/arrow-right.icon";
+import ArrowLeftIcon from "../../../../../assets/svg/common/arrow-left.icon";
+import MediaRightIcon from "../../../../../assets/svg/common/media-right.icon";
 
 interface IPaginationProps {
   handlePageChange: (page: number) => void;
@@ -48,28 +48,28 @@ export default function Pagination({
         onClick={() => handlePageChange(1)}
         disabled={handleDisableArrows()?.left_arrows}
       >
-        <img src={mediaLeft} alt="media-left" className="w-5 h-5 " />
+        <MediaLeftIcon/>
       </button>
       <button
         className="btn btn-circle btn-primary btn-sm"
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={handleDisableArrows()?.left_arrows}
       >
-        <img src={arrowLeft} alt="arrow-left" className="w-5 h-5" />
+        <ArrowLeftIcon/>
       </button>
       <button
         className="btn btn-circle btn-primary btn-sm"
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={handleDisableArrows()?.right_arrows}
       >
-        <img src={arrowRight} alt="arrow-right" className="w-5 h-5" />
+        <ArrowRightIcon/>
       </button>
       <button
         className="btn btn-circle btn-primary btn-sm"
         onClick={() => handlePageChange(calculateTotalPages())}
         disabled={handleDisableArrows()?.right_arrows}
       >
-        <img src={mediaRight} alt="media-right" className="w-5 h-5" />
+        <MediaRightIcon/>
       </button>
       <span className="flex items-center gap-1">
         <div>Page</div>

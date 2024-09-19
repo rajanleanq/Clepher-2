@@ -1,6 +1,6 @@
 import React from "react";
 import { routes } from "../../../../../../constant/routes";
-import breadCrumbSvg from "../../../../../../assets/svg/navbar/breadcrumb.svg";
+import BreadCrumbIcon from "../../../../../../assets/svg/navbar/breadcrumb.icon";
 
 export default function NavAvatar() {
   return (
@@ -15,8 +15,11 @@ export default function NavAvatar() {
           </div>
         </div>
       </a>
-      <label htmlFor="my-drawer-1" className="btn btn-circle drawer-button btn-ghost lg:hidden">
-        <img src={breadCrumbSvg} alt="breadcrumb" className="w-5 h-5" />
+      <label
+        htmlFor="my-drawer-1"
+        className="btn btn-circle drawer-button btn-ghost lg:hidden"
+      >
+        <BreadCrumbIcon />
       </label>
     </div>
   );

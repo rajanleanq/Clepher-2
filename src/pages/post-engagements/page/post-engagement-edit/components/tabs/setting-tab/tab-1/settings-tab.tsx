@@ -1,7 +1,7 @@
 import PostReaction from "../component/post-reaction";
 import PrivateReply from "../component/private-reply";
-import InfoSvg from "../../../../../../../../assets/svg/common/info.svg";
 import AddKeyword from "../../../../../../../../components/molecule/add-keyword/add-keyword";
+import InfoIcon from "../../../../../../../../assets/svg/common/info.icon";
 
 export default function PostEngagementSettings() {
   const messages: Array<{ title: string; value: number }> = [
@@ -35,64 +35,66 @@ export default function PostEngagementSettings() {
               key={message.value}
               className="flex flex-row items-center justify-between cursor-pointer"
             >
-              <span className="opacity-60 xs:text-13 md:text-14">{message.title}</span>
+              <span className="opacity-60 xs:text-13 md:text-14">
+                {message.title}
+              </span>
               <input type="checkbox" className="toggle toggle-primary" />
             </label>
           ))}
         </div>
-        <br/>
+        <br />
         <div className="w-full">
           <div className="flex flex-row items-center gap-1">
             <h1 className="xs:text-[12px] md:text-14 font-semibold text-gray-900 mb-1">
               Require a Post Reaction
             </h1>
-            <InfoIcon value={tooltip_constant.post_reaction} />
+            <InfoTooltip value={tooltip_constant.post_reaction} />
           </div>
           <hr />
           <PostReaction />
         </div>
-        <br/>
+        <br />
 
         <div className="flex flex-col xs:gap-1 md:gap-3">
           <div className="flex flex-row items-center gap-1">
             <h1 className="xs:text-[13px] md:text-14 text-gray-900 mb-1">
               Exclude Comments With These Keywords
             </h1>
-            <InfoIcon value={tooltip_constant.exclude_comment} />
+            <InfoTooltip value={tooltip_constant.exclude_comment} />
           </div>
           <AddKeyword handleChange={() => {}} />
         </div>
-        <br/>
+        <br />
 
         <div className="flex flex-col xs:gap-1 md:gap-3">
           <div className="flex flex-row items-center gap-1">
             <h1 className="xs:text-[13px] md:text-14 text-gray-900 mb-1">
               Only Trigger For Comments With These Keywords
             </h1>
-            <InfoIcon value={tooltip_constant.only_trigger} />
+            <InfoTooltip value={tooltip_constant.only_trigger} />
           </div>
 
           <AddKeyword handleChange={() => {}} />
         </div>
-        <br/>
+        <br />
         <div className="w-full">
           <div className="flex flex-row items-center gap-1">
             <h1 className="xs:text-[13px] md:text-14 font-semibold text-gray-900 mb-1">
               Private Reply After Post Engagement
             </h1>
-            <InfoIcon value={tooltip_constant.private_reply_post} />
+            <InfoTooltip value={tooltip_constant.private_reply_post} />
           </div>
           <h1 className="xs:text-[13px] md:text-14 font-semibold text-gray-900 mb-1"></h1>
           <hr />
           <PrivateReply />
         </div>
-        <br/>
+        <br />
         <div className="w-full">
           <div className="flex flex-row items-center gap-1">
             <h1 className="xs:text-[13px] md:text-14 font-semibold text-gray-900 mb-1">
               Send Private Reply Right After
             </h1>
-            <InfoIcon value={tooltip_constant.private_reply_post} />
+            <InfoTooltip value={tooltip_constant.private_reply_post} />
           </div>
 
           <hr />
@@ -112,10 +114,10 @@ export default function PostEngagementSettings() {
   );
 }
 
-const InfoIcon = ({ value }: { value: string }) => {
+const InfoTooltip = ({ value }: { value: string }) => {
   return (
     <div className="tooltip" data-tip={value}>
-      <img src={InfoSvg} alt="info svg" className="w-4 h-4" />
+      <InfoIcon />
     </div>
   );
 };

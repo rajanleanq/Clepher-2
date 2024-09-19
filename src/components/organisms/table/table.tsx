@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import arrowDownSolid from "../../../assets/svg/common/arrow-down-solid.svg";
 import { cn } from "../../../lib/utils";
 import TableHead, {
   ITableHeadProps,
 } from "./components/table-header/table-header";
 import Pagination from "./components/pagination/pagination";
+import ArrowDownSolidIcon from "../../../assets/svg/common/arrow-down-solid.icon";
 
 export interface ITableProps<T> extends ITableHeadProps {
   columns: TableColumnsType<T>;
@@ -39,11 +39,11 @@ export default function Table<T extends Record<string, any>>({
   const handleSortDirection = (column: keyof T) => {
     if (sortColumn === column) {
       return (
-        <img
-          src={arrowDownSolid}
-          alt="arrow-down-solid"
+        <div
           className={`w-3 h-3 ${sortDirection === "desc" ? "rotate-180" : ""}`}
-        />
+        >
+          <ArrowDownSolidIcon />
+        </div>
       );
     }
     return null;

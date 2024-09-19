@@ -64,3 +64,6 @@ table-sm :where(th, td) {
   padding-bottom: 0.25rem;
 }
 
+.fill-current {
+  fill: currentColor;
+}

@@ -1,8 +1,8 @@
 import React from "react";
-import homeSvg from "../../../../../../assets/svg/navbar/home.svg";
-import billingSvg from "../../../../../../assets/svg/navbar/billing.svg";
-import accountSvg from "../../../../../../assets/svg/navbar/account.svg";
-import logoutSvg from "../../../../../../assets/svg/navbar/logout.svg";
+import HomeIcon from "../../../../../../assets/svg/navbar/home.icon";
+import BillingIcon from "../../../../../../assets/svg/navbar/billing.icon";
+import AccountIcon from "../../../../../../assets/svg/navbar/account.icon";
+import LogoutIcon from "../../../../../../assets/svg/navbar/logout.icon";
 interface IMenuProps {
   title: string;
   icon: React.ReactNode;
@@ -11,19 +11,19 @@ export default function ProfileMenu() {
   const service_menu: IMenuProps[] = [
     {
       title: "Home",
-      icon: <img src={homeSvg} alt="status" className="w-5 h-5" />,
+      icon: <HomeIcon/>
     },
     {
       title: "Billing",
-      icon: <img src={billingSvg} alt="community" className="w-5 h-5" />,
+      icon: <BillingIcon/>
     },
     {
       title: "Accounts",
-      icon: <img src={accountSvg} alt="knowledge" className="w-5 h-5" />,
+      icon: <AccountIcon/>
     },
     {
       title: "Log Out",
-      icon: <img src={logoutSvg} alt="service" className="w-5 h-5" />,
+      icon: <LogoutIcon/>
     },
   ];
   return (

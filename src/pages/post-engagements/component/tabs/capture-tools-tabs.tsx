@@ -1,15 +1,15 @@
 // tabs for capturing tools
-import LibrarySvg from "../../../../assets/svg/capture-tools-icon/library.svg";
-import JsonGeneratorSvg from "../../../../assets/svg/capture-tools-icon/json-generator.svg";
-import CheckboxPluginSvg from "../../../../assets/svg/capture-tools-icon/checkbox-plugin.svg";
-import MessengerCodeSvg from "../../../../assets/svg/capture-tools-icon/messenger-code.svg";
-import PostEngagementSvg from "../../../../assets/svg/capture-tools-icon/post-engagement.svg";
-import SendToMessengerSvg from "../../../../assets/svg/capture-tools-icon/send-to-messenger.svg";
 import { Link, useLocation } from "react-router-dom";
+import LibrarySvg from "../../../../assets/svg/capture-tools-icon/library.icon";
+import JsonGeneratorSvg from "../../../../assets/svg/capture-tools-icon/json-generator.icon";
+import CheckboxPluginIcon from "../../../../assets/svg/capture-tools-icon/checkbox-plugin.icon";
+import MessengerCodeSvg from "../../../../assets/svg/capture-tools-icon/messenger-code.icon";
+import PostEngagmentIcon from "../../../../assets/svg/capture-tools-icon/post-engagement.icon";
+import SentToMessengerIcon from "../../../../assets/svg/capture-tools-icon/send-to-messenger.icon";
 interface TabProps {
   title: string;
   link: string;
-  icon: string;
+  icon: JSX.Element;
 }
 export default function CaptureToolsTabs({
   handleTab,
@@ -21,32 +21,32 @@ export default function CaptureToolsTabs({
     {
       title: "Links Library",
       link: "links-library",
-      icon: LibrarySvg,
+      icon: <LibrarySvg />,
     },
     {
       title: "JSON Generator",
       link: "json-generator",
-      icon: JsonGeneratorSvg,
+      icon: <JsonGeneratorSvg />,
     },
     {
       title: "Checkbox Plugin",
       link: "checkbox-plugin",
-      icon: CheckboxPluginSvg,
+      icon: <CheckboxPluginIcon />,
     },
     {
       title: "Messenger Code",
       link: "messenger-code",
-      icon: MessengerCodeSvg,
+      icon: <MessengerCodeSvg />,
     },
     {
       title: "Post Engagement",
       link: "post-engagement",
-      icon: PostEngagementSvg,
+      icon: <PostEngagmentIcon />,
     },
     {
       title: "Send To Messenger",
       link: "send-to-messenger",
-      icon: SendToMessengerSvg,
+      icon: <SentToMessengerIcon />,
     },
   ];
   return (
@@ -69,13 +69,7 @@ export default function CaptureToolsTabs({
                   location.pathname?.includes(tab.link) ? "active" : ""
                 }
               >
-                <img
-                  src={tab.icon || ""}
-                  alt={tab?.title}
-                  className={
-                    location.pathname?.includes(tab.link) ? "svg-active" : ""
-                  }
-                />
+                {tab.icon}
                 {tab.title}
               </Link>
             </li>

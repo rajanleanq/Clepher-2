@@ -1,17 +1,17 @@
-import SearchSvg from "../../../../../assets/svg/common/search.svg";
-import DownArrowSvg from "../../../../../assets/svg/common/down-arrow.svg";
+import DownArrowIcon from "../../../../../assets/svg/common/down-arrow.icon";
+import SearchIcon from "../../../../../assets/svg/common/search.icon";
 
 export interface ITableHeadProps {
   searchTerm?: string;
   handleSearch?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleBulkAction: () => void;
-  tableName:string
+  tableName: string;
 }
 export default function TableHead({
   handleSearch,
   searchTerm,
   handleBulkAction,
-  tableName
+  tableName,
 }: ITableHeadProps) {
   return (
     <div className="mb-2 flex flex-row items-end gap-2 w-full">
@@ -28,13 +28,13 @@ export default function TableHead({
             className="input input-sm h-[30px] focus:outline-none join-item border-0"
           />
           <span className="join-item px-1">
-            <img src={SearchSvg} alt="search" />
+            <SearchIcon />
           </span>
         </div>
       </div>
       <div role="listbox" className="dropdown dropdown-end">
         <button className="btn btn-sm btn-outline">
-          Bulk Actions <img src={DownArrowSvg} alt="down-arrow" />
+          Bulk Actions <DownArrowIcon />
         </button>
         <ul
           tabIndex={0}
