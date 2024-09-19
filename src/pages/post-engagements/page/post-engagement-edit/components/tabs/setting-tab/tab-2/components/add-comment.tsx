@@ -29,7 +29,7 @@ export default function AddComment() {
       {comments.map((item, index) => (
         <div
           key={index}
-          className="bg-blue-100 p-1.5 mb-1.5 rounded-md border border-dotted border-base-300"
+          className="bg-base-200 p-1.5 mb-1.5 rounded-md border border-dotted border-base-300"
         >
           <div className="flex flex-row items-center gap-1.5">
             <input
@@ -51,7 +51,7 @@ export default function AddComment() {
       {comments?.length !== 10 && (
         <Button
           onClick={handleAddComment}
-          className="bg-blue-400 text-white font-semibold w-max mx-auto mt-1"
+          className="btn btn-primary btn-md font-semibold w-max mx-auto mt-1"
         >
           Add Comment
         </Button>
