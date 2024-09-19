@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { cn } from "../../../../../../../lib/utils";
 import SelectAPost from "./tab-1/select-a-post";
 import PostIDUrl from "./tab-2/post-id-url";
@@ -33,7 +33,7 @@ export default function PostMenuTabs() {
           </div>
         ))}
       </div>
-      <div className="p-6 w-full">
+      <div className=" w-full">
         {activeTab === 1 && <SelectAPost />}
 
         {activeTab === 2 && <PostIDUrl />}
