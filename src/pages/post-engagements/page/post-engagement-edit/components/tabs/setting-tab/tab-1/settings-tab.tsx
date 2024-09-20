@@ -2,6 +2,7 @@ import PostReaction from "../component/post-reaction";
 import PrivateReply from "../component/private-reply";
 import AddKeyword from "../../../../../../../../components/molecule/add-keyword/add-keyword";
 import { InfoIcon } from "../../../../../../../../assets/svg/common/common.icon";
+import { Input } from "../../../../../../../../components/atom/input/input";
 
 export default function PostEngagementSettings() {
   const messages: Array<{ title: string; value: number }> = [
@@ -38,7 +39,7 @@ export default function PostEngagementSettings() {
               <span className="opacity-60 xs:text-13 md:text-14">
                 {message.title}
               </span>
-              <input type="checkbox" className="toggle toggle-primary" />
+              <Input type="checkbox" className="toggle toggle-primary" />
             </label>
           ))}
         </div>

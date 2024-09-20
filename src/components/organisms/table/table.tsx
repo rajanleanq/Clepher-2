@@ -3,6 +3,7 @@ import { cn } from "../../../lib/utils";
 import TableHead, { ITableHeadProps } from "./components/table-header/table-header";
 import Pagination from "./components/pagination/pagination";
 import { ArrowDownSolidIcon } from "../../../assets/svg/common/common.icon";
+import { Input } from "../../atom/input/input";
 
 export interface ITableProps<T> extends ITableHeadProps {
   columns: TableColumnsType<T>;
@@ -138,7 +139,7 @@ export default function Table<T extends Record<string, any>>({
             <tr>
               <th className="w-5">
                 <label>
-                  <input
+                  <Input
                     type="checkbox"
                     className="checkbox checkbox-sm"
                     onChange={toggleSelectAllRows}
@@ -168,7 +169,7 @@ export default function Table<T extends Record<string, any>>({
                 <tr key={index}>
                   <td>
                     <label>
-                      <input
+                      <Input
                         type="checkbox"
                         className="checkbox checkbox-sm"
                         checked={selectedRows.includes(item[columns?.[1]?.key])}

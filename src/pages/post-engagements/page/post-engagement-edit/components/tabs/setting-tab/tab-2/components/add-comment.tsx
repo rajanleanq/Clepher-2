@@ -39,12 +39,12 @@ export default function AddComment() {
               onChange={(e) => handleInputChange(e, index)}
               value={item}
             />
-            <button
-              className="btn btn-sm btn-circle btn-ghost"
+            <Button
+              className="btn btn-sm btn-circle btn-ghost rounded-full"
               onClick={() => handleDeleteComment(index)}
             >
               ✕
-            </button>
+            </Button>
           </div>
         </div>
       ))}

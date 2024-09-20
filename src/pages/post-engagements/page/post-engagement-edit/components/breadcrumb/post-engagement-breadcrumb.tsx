@@ -1,34 +1,23 @@
+import BreadCrumb, {
+  IBreadCrumbProps,
+} from "../../../../../../components/atom/breadcrumb/breadcrumb";
 import { Button } from "../../../../../../components/atom/button/button";
 import { routes } from "../../../../../../constant/routes";
-import { Link } from "react-router-dom";
 
 export default function PostEngBreadcrumb() {
-  const links = [
+  const links: IBreadCrumbProps["previous_links"] = [
     {
-      title: "Capture Tools",
+      name: "Capture Tools",
       link: routes?.index,
     },
     {
-      title: "Post Engagement",
+      name: "Post Engagement",
       link: routes?.index,
     },
   ];
   return (
     <div className="flex items-center justify-between px-2">
-      <div
-        role="navigation"
-        aria-label="Breadcrumbs"
-        className="breadcrumbs text-lg p-0"
-      >
-        <ul>
-          {links.map((link, index) => (
-            <li role="link" key={index}>
-              <Link to={link.link}>{link.title}</Link>
-            </li>
-          ))}
-          <li role="link">Edit</li>
-        </ul>
-      </div>
+      <BreadCrumb current_link_title="Edit" previous_links={links} />
       <div>
         <Button className="btn btn-sm btn-primary">Save</Button>
       </div>

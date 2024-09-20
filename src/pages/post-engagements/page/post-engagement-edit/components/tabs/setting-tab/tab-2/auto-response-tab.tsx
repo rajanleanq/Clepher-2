@@ -1,5 +1,6 @@
 import React from "react";
 import ReplyInComments from "./components/reply-in-comments";
+import { Input } from "../../../../../../../../components/atom/input/input";
 
 export default function PostEngagementAutoResponse() {
   const toggleFields: Array<{ title: string; value: number }> = [
@@ -19,7 +20,7 @@ export default function PostEngagementAutoResponse() {
             <span className="opacity-60 xs:text-13 md:text-14">
               {field.title}
             </span>
-            <input type="checkbox" className="toggle toggle-primary" />
+            <Input type="checkbox" className="toggle toggle-primary" />
           </label>
         ))}
       </div>

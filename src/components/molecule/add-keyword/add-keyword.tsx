@@ -1,6 +1,7 @@
 import React, { FormEvent, useState, useCallback } from "react";
 import Badge from "../../atom/badge/badge";
 import { Button } from "../../atom/button/button";
+import { Input } from "../../atom/input/input";
 
 interface IAddList {
   handleChange: (value: string[]) => void;
@@ -49,14 +50,17 @@ export default function AddKeyword({ handleChange }: IAddList) {
       )}
 
       <form onSubmit={handleFormEvent} className="join w-full">
-        <input
+        <Input
           placeholder="Specify Keywords"
           className="input join-item w-full input-bordered focus:outline-offset-0 xs:text-[13px] md:text-14"
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          autoFocus // Focus back on input after submit
+          autoFocus
         />
-        <Button type="submit" className="btn join-item btn-primary xs:text-[12px] md:text-[14px]">
+        <Button
+          type="submit"
+          className="btn join-item btn-primary xs:text-[12px] md:text-[14px]"
+        >
           Add Keyword
         </Button>
       </form>

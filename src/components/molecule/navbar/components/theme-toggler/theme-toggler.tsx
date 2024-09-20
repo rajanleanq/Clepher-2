@@ -3,10 +3,11 @@ import {
   DarkIcon,
   LightIcon,
 } from "../../../../../assets/svg/navbar/navbar.icon";
+import { Input } from "../../../../atom/input/input";
 export default function ThemeToggleController() {
   return (
     <label className="swap swap-rotate btn btn-circle btn-ghost hidden md:inline-grid">
-      <input type="checkbox" className="theme-controller" value="night" />
+      <Input type="checkbox" className="theme-controller" value="night" />
       <div className="swap-on w-5 h-5">
         <LightIcon />
       </div>

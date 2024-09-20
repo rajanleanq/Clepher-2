@@ -1,4 +1,5 @@
 import { ArrowDownIcon, SearchIcon } from "../../../../../assets/svg/common/common.icon";
+import { Input } from "../../../../atom/input/input";
 
 export interface ITableHeadProps {
   searchTerm?: string;
@@ -19,7 +20,7 @@ export default function TableHead({
       </div>
       <div className="form-control hidden md:flex">
         <div className="join items-center border border-neutral-900 bg-base-100">
-          <input
+          <Input
             onChange={handleSearch}
             value={searchTerm}
             placeholder="Search…"

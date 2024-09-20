@@ -5,6 +5,7 @@ import {
   MediaLeftIcon,
   MediaRightIcon,
 } from "../../../../../assets/svg/common/common.icon";
+import { Input } from "../../../../atom/input/input";
 
 interface IPaginationProps {
   handlePageChange: (page: number) => void;
@@ -69,7 +70,7 @@ export default function Pagination({
       </span>
       <span className="hidden items-center gap-1 md:flex">
         Go to page:
-        <input
+        <Input
           type="number"
           className="input w-16 p-1 input-sm input-bordered focus:outline-offset-0"
           value={page_number || ""}

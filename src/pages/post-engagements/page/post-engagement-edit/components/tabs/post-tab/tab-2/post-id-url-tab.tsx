@@ -1,5 +1,6 @@
 import { FormEvent } from "react";
 import { Button } from "../../../../../../../../components/atom/button/button";
+import { Input } from "../../../../../../../../components/atom/input/input";
 
 export default function PostIDUrl() {
   const handleFormEvent = (e: FormEvent) => {
@@ -9,7 +10,8 @@ export default function PostIDUrl() {
   return (
     <form onSubmit={handleFormEvent} className="flex place-content-center">
       <div className="join mt-10">
-        <input
+        <Input
+          type="url"
           placeholder="Post ID / URL"
           className="input join-item w-96 input-bordered focus:outline-offset-0"
           value=""
